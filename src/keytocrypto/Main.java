@@ -37,10 +37,15 @@ public class Main {
             if (ciph > key.get(i)) {
                 int result = ciph - key.get(i) + CONVERTBASE26;
                 key.add((char) result);
-            }
-            // B - N = O    1 - 13 = 14 or 78
-            else {
-                int result = ciph + key.get(i) - CONVERTBASE26;
+            } else {
+                BoundedCounter counter = new BoundedCounter(25);
+                int begin = ciph - CONVERTBASE26;
+                int end = key.get(i) - CONVERTBASE26;
+                counter.setValue(begin);
+                for (int k = 0; k < end; k++) {
+                    counter.prev();
+                }
+                int result = counter.getValue() + CONVERTBASE26;
                 key.add((char) result);
             }
             i++;

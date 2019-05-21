@@ -38,7 +38,7 @@ public class Main {
                 int result = ciph - key.get(i) + CONVERTBASE26;
                 key.add((char) result);
             } else {
-                BoundedCounter counter = new BoundedCounter(25);    // A-Z is 0-25
+                BoundedCounter counter = BoundedCounter.getInstance(25);        // A-Z is 0-25
                 int begin = ciph - CONVERTBASE26;
                 int end = key.get(i) - CONVERTBASE26;
                 counter.setValue(begin);
@@ -68,8 +68,17 @@ class BoundedCounter {
     private int value;
     private int upperLimit;
 
-    public BoundedCounter(int upperLimit) {
+    static BoundedCounter counter = null;
+
+    private BoundedCounter(int upperLimit) {
         this.upperLimit = upperLimit;
+    }
+
+    public static BoundedCounter getInstance(int upperLimit) {
+        if (counter == null) {
+            counter = new BoundedCounter(upperLimit);
+        }
+        return counter;
     }
 
     public void previous() {
@@ -88,7 +97,7 @@ class BoundedCounter {
 
     public void setValue(int x) {
         if (x >= 0 && x <= upperLimit) {
-            this.value = x;
+            value = x;
         }
     }
 

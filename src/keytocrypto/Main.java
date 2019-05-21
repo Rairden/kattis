@@ -22,7 +22,7 @@ public class Main {
         char[] cipher = ciphertext.toCharArray();   // SGZVQBUQAFRWSLC
         List<Character> key = new ArrayList<>();    // ACM
 
-        // initialize secretWord (ACM) to resizeable List
+        // initialize List by adding secretWord (ACM)
         char[] secret = secretWord.toCharArray();
         for (char c : secret) {
             key.add(c);

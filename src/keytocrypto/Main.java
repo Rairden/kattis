@@ -66,7 +66,7 @@ public class Main {
 
 class BoundedCounter {
     private int value;
-    private int upperLimit;
+    public int upperLimit;
 
     static BoundedCounter counter = null;
 
@@ -86,9 +86,7 @@ class BoundedCounter {
             value = upperLimit;
             return;
         }
-        if (value > 0) {
-            value--;
-        }
+        value--;
     }
 
     public int getValue() {

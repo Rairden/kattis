@@ -40,7 +40,6 @@ public class Main {
                 if (a < b) {
                     min = a;
                     mid = b;
-
                 } else {
                     min = b;
                     mid = a;

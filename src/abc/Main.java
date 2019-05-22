@@ -9,7 +9,7 @@ public class Main {
         Scanner scan = new Scanner(input);
         int[] arr = mySort(scan.nextInt(), scan.nextInt(), scan.nextInt());
 
-        scan.nextLine();    // need to fix this
+        scan.nextLine();    // nextInt() leaves the new line character out
         String command = scan.nextLine();
 
         for (int i = 0; i < 3; i++) {

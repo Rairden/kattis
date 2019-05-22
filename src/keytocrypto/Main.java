@@ -37,14 +37,10 @@ public class Main {
                 int result = ciph - key.get(i) + CONVERTBASE26;
                 key.add((char) result);
             } else {
-                BoundedCounter counter = BoundedCounter.getInstance(25);        // A-Z is 0-25
                 int begin = ciph - CONVERTBASE26;
                 int end = key.get(i) - CONVERTBASE26;
-                counter.setValue(begin);
-                for (int k = 0; k < end; k++) {
-                    counter.previous();
-                }
-                int result = counter.getValue() + CONVERTBASE26;
+                int counter = previous(25, begin, end);
+                int result = counter + CONVERTBASE26;
                 key.add((char) result);
             }
             i++;
@@ -61,44 +57,16 @@ public class Main {
             System.out.print(c);
         }
     }
-}
 
-class BoundedCounter {
-    private int value;
-    public int upperLimit;
-
-    static BoundedCounter counter = null;
-
-    private BoundedCounter(int upperLimit) {
-        this.upperLimit = upperLimit;
-    }
-
-    public static BoundedCounter getInstance(int upperLimit) {
-        if (counter == null) {
-            counter = new BoundedCounter(upperLimit);
+    public static int previous(int upperLimit, int begin, int end) {
+        int value = begin;
+        for (int k = 0; k < end; k++) {
+            if (value == 0) {
+                value = upperLimit;
+                continue;
+            }
+            value--;
         }
-        return counter;
-    }
-
-    public void previous() {
-        if (value == 0) {
-            value = upperLimit;
-            return;
-        }
-        value--;
-    }
-
-    public int getValue() {
         return value;
-    }
-
-    public void setValue(int x) {
-        if (x >= 0 && x <= upperLimit) {
-            value = x;
-        }
-    }
-
-    public String toString() {
-        return "" + value;
     }
 }

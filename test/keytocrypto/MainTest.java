@@ -8,34 +8,16 @@ class MainTest {
 
     @Test
     void previous() {
-        BoundedCounter counter = BoundedCounter.getInstance(25);
-        int upperLimit = counter.upperLimit;
+        // B - N = O    1 - 13 = 14
+        int result = Main.previous(25, 1, 13);
+        assertEquals(14, result);
 
-        if (counter.getValue() >= 0 && counter.getValue() <= upperLimit) {
-            assert true;
-        } else {
-            assert false;
-        }
+        // A - O = M    0 - 14 = 12
+        int result2 = Main.previous(25, 0, 14);
+        assertEquals(12, result2);
 
-        int end1 = 13;           // B - N = O    1 - 13 = 14
-        counter.setValue(1);
-        for (int k = 0; k < end1; k++) {
-            counter.previous();
-        }
-        assertEquals(14, counter.getValue());
-
-        int end2 = 14;           // A - O = M    0 - 14 = 12
-        counter.setValue(0);
-        for (int k = 0; k < end2; k++) {
-            counter.previous();
-        }
-        assertEquals(12, counter.getValue());
-
-        int end3 = 25;           // Y - Z = Z    24 - 25 = 25
-        counter.setValue(24);
-        for (int k = 0; k < end3; k++) {
-            counter.previous();
-        }
-        assertEquals(25, counter.getValue());
+        // Y - Z = Z    24 - 25 = 25
+        int result3 = Main.previous(25, 24, 25);
+        assertEquals(25, Main.previous(25, 24, 25));
     }
 }

@@ -22,14 +22,13 @@ public class Main {
         char[] cipher = ciphertext.toCharArray();   // SGZVQBUQAFRWSLC
         List<Character> key = new ArrayList<>();    // ACM
 
-        // initialize List by adding secretWord (ACM)
-        char[] secret = secretWord.toCharArray();
+        char[] secret = secretWord.toCharArray();   // initialize List by adding secretWord (ACM)
         for (char c : secret) {
             key.add(c);
         }
 
-        // 1. cipher - key = message    S-A = S
-        // 2. append result to key.     ACM + S
+        // cipher - key = message    S-A = S
+        // append result to key.     ACM + S
         int i = 0;
         for (char ciph : cipher) {
             // If cipher > key then do simple subtraction.  S - A = S    83 - 0 = 83

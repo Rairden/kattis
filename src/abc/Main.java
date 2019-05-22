@@ -9,16 +9,21 @@ public class Main {
         Scanner scan = new Scanner(input);
         int[] arr = mySort(scan.nextInt(), scan.nextInt(), scan.nextInt());
 
+        scan.nextLine();    // need to fix this
         String command = scan.nextLine();
 
         for (int i = 0; i < 3; i++) {
-            switch (command) {
-                case "A":
-                    System.out.print(arr[0]);
-                case "B":
-                    System.out.print(arr[1]);
-                case "C":
-                    System.out.print(arr[2]);
+            char cmd = command.charAt(i);
+            switch (cmd) {
+                case 'A':
+                    System.out.print(arr[0] + " ");
+                    break;
+                case 'B':
+                    System.out.print(arr[1] + " ");
+                    break;
+                case 'C':
+                    System.out.print(arr[2] + " ");
+                    break;
             }
         }
     }
@@ -27,7 +32,7 @@ public class Main {
         int min;
         int mid;
         int max;
-        int[] arr1 = new int[]{a, b, c};
+        int[] arr = new int[3];
 
         if (a < b || a < c) {
             if (b < c) {
@@ -59,9 +64,9 @@ public class Main {
                 mid = b;
             }
         }
-        arr1[0] = min;
-        arr1[1] = mid;
-        arr1[2] = max;
-        return arr1;
+        arr[0] = min;
+        arr[1] = mid;
+        arr[2] = max;
+        return arr;
     }
 }

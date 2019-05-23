@@ -5,17 +5,18 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        String input = "156";
-        String[] arr = input.split("");
-        int length = input.length();
-
-        Scanner scan = new Scanner(input);
+        Scanner scan = new Scanner(System.in);
         int number = scan.nextInt();
-        constructFirstNum(arr, number, length);
+
+        constructFirstNum(number);
     }
 
-    public static void constructFirstNum(String[] arr, int number, int length) {
+    public static void constructFirstNum(int number) {
         IntegerToList convert = IntegerToList.getInstance();
+
+        String str = String.valueOf(number);
+        String[] arr = str.split("");
+        int length = str.length();
 
         for (String s : arr) {
             convert.firstNum.add(Integer.parseInt(s));
@@ -97,6 +98,7 @@ public class Main {
                 IntegerToList.convert.secondNum.clear();
             }
         }
+        System.out.print(0);
     }
 }
 

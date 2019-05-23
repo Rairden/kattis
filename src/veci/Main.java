@@ -125,8 +125,7 @@ class IntegerToList {
     }
 
     /**
-     * @param number the num we want to split apart
-     * @return an ArrayList of the individual numbers we want to later compare
+     * @param number the number we want to split apart to add to a List
      */
     public static void splitNumber(int number) {
         while (number > 0) {

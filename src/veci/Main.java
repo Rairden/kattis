@@ -5,15 +5,13 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-
-        String input = "157";
+        String input = "27711";
         String[] arr = input.split("");
         int length = input.length();
 
         Scanner scan = new Scanner(input);
         int number = scan.nextInt();
         foo(arr, number, length);
-
     }
 
     public static void foo(String[] arr, int number, int length) {
@@ -52,18 +50,9 @@ public class Main {
 
     }
 
-    public static int getNumber(int number, int length) {
-        int limit = (int) Math.pow(10, length);
-        int zero = 0;
-        int one = 0;
-        int two = 0;
-        int three = 0;
-        int four = 0;
-        int five = 0;
-        int six = 0;
-        int seven = 0;
-        int eight = 0;
-        int nine = 0;
+    public static void getNumber(int number, int length) {
+        int limit = (int) Math.pow(10, length) - 1;     // If number is 27,711, then limit = 10^5 - 1 = 99,999
+        int zero = 0, one = 0, two = 0, three = 0, four = 0, five = 0, six = 0, seven = 0, eight = 0, nine = 0;
 
         while (number <= limit) {
             number++;
@@ -91,11 +80,28 @@ public class Main {
                     nine++;
             }
 
-            // now compare firstNum to secondNum
-            int x = IntegerToList.convert.one;
-
+            // compare firstNum to secondNum, then reset the counters to 0 if it doesn't pass test.
+            if (IntegerToList.convert.zero == zero
+                    && IntegerToList.convert.one == one
+                    && IntegerToList.convert.two == two
+                    && IntegerToList.convert.three == three
+                    && IntegerToList.convert.four == four
+                    && IntegerToList.convert.five == five
+                    && IntegerToList.convert.six == six
+                    && IntegerToList.convert.seven == seven
+                    && IntegerToList.convert.eight == eight
+                    && IntegerToList.convert.nine == nine) {
+                for (Integer integer : IntegerToList.convert.secondNum) {
+                    System.out.print(integer);
+                }
+                System.out.println();
+                return;
+            } else {
+                zero = 0;
+                zero = one = two = three = four = five = six = seven = eight = nine;
+                IntegerToList.convert.secondNum.clear();
+            }
         }
-        return 0;
     }
 }
 
@@ -103,16 +109,7 @@ class IntegerToList {
     public List<Integer> firstNum;
     public List<Integer> secondNum;
     private Stack<Integer> stack;
-    int zero;
-    int one;
-    int two;
-    int three;
-    int four;
-    int five;
-    int six;
-    int seven;
-    int eight;
-    int nine;
+    public int zero, one, two, three, four, five, six, seven, eight, nine;
 
     static IntegerToList convert = null;
 
@@ -120,16 +117,7 @@ class IntegerToList {
         firstNum    = new ArrayList<>();
         secondNum   = new ArrayList<>();
         stack       = new Stack<>();
-        int zero = 0;
-        int one = 0;
-        int two = 0;
-        int three = 0;
-        int four = 0;
-        int five = 0;
-        int six = 0;
-        int seven = 0;
-        int eight = 0;
-        int nine = 0;
+        int zero = 0, one = 0, two = 0, three = 0, four = 0, five = 0, six = 0, seven = 0, eight = 0, nine = 0;
     }
 
     public static IntegerToList getInstance() {
@@ -154,5 +142,4 @@ class IntegerToList {
             convert.secondNum.add(convert.stack.pop());
         }
     }
-
 }

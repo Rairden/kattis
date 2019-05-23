@@ -5,20 +5,19 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        String input = "27711";
+        String input = "156";
         String[] arr = input.split("");
         int length = input.length();
 
         Scanner scan = new Scanner(input);
         int number = scan.nextInt();
-        foo(arr, number, length);
+        constructFirstNum(arr, number, length);
     }
 
-    public static void foo(String[] arr, int number, int length) {
+    public static void constructFirstNum(String[] arr, int number, int length) {
         IntegerToList convert = IntegerToList.getInstance();
-        String[] arrayInitial = arr.clone();
 
-        for (String s : arrayInitial) {
+        for (String s : arr) {
             convert.firstNum.add(Integer.parseInt(s));
         }
 
@@ -44,14 +43,11 @@ public class Main {
             else if (integer == 9)
                 IntegerToList.convert.nine++;
         }
-
-        int limit = (int) Math.pow(10, length);
-        getNumber(number, length);
-
+        findMatchingNumber(number, length);
     }
 
-    public static void getNumber(int number, int length) {
-        int limit = (int) Math.pow(10, length) - 1;     // If number is 27,711, then limit = 10^5 - 1 = 99,999
+    public static void findMatchingNumber(int number, int length) {
+        int limit = (int) Math.pow(10, length) - 1;     // If number is 27,711  then limit = 10^5 - 1 = 99,999
         int zero = 0, one = 0, two = 0, three = 0, four = 0, five = 0, six = 0, seven = 0, eight = 0, nine = 0;
 
         while (number <= limit) {
@@ -94,10 +90,9 @@ public class Main {
                 for (Integer integer : IntegerToList.convert.secondNum) {
                     System.out.print(integer);
                 }
-                System.out.println();
                 return;
             } else {
-                zero = 0;
+                nine = 0;
                 zero = one = two = three = four = five = six = seven = eight = nine;
                 IntegerToList.convert.secondNum.clear();
             }

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class IntegerToList {
+
     public List<Integer> firstNum;
     public List<Integer> secondNum;
     private Stack<Integer> stack;

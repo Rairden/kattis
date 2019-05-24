@@ -54,9 +54,6 @@ ciphertext using the given secret word.
 Sample Input 1                   | Sample Output 1             
 -------------------------------- | ----------------------------
 <pre>
-SGZVQBUQAFRWSLC
+SGZVQBUQAFRWSLC         SENDMOREMONKEYS
 ACM
-</pre>
-<pre>
-SENDMOREMONKEYS
 </pre>

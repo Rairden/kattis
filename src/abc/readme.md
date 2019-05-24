@@ -19,19 +19,13 @@ Output A, B and C in the desired order on a single line, separated by single spa
 Sample Input 1         | Sample Output 1
 ---------------------- | ------------------
 <pre>
-1 5 3
+1 5 3                   1 3 5
 ABC
-</pre>
-<pre>
-1 3 5
 </pre>
 
 Sample Input 2         | Sample Output 2
 ---------------------- | ------------------
 <pre>
-6 4 2
+6 4 2                   6 2 4
 CAB
-</pre>
-<pre>
-6 2 4
 </pre>

@@ -1,4 +1,4 @@
-package heartrate2; /** Simple yet moderately fast I/O routines.
+/** Simple yet moderately fast I/O routines.
  *
  * Example usage:
  *
@@ -26,7 +26,7 @@ package heartrate2; /** Simple yet moderately fast I/O routines.
  *
  * @author: Kattis
  */
-
+package kattio;
 import java.util.StringTokenizer;
 import java.io.BufferedReader;
 import java.io.BufferedOutputStream;
@@ -36,7 +36,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.OutputStream;
 
-class Kattio extends PrintWriter {
+public class Kattio extends PrintWriter {
     public Kattio(InputStream i) {
         super(new BufferedOutputStream(System.out));
         r = new BufferedReader(new InputStreamReader(i));

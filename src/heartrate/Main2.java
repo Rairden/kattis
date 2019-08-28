@@ -1,6 +1,8 @@
-package heartrate2;
+package heartrate;
 
-public class Main {
+import kattio.Kattio;
+
+public class Main2 {
 
     public static void main(String[] args) {
         bpm();

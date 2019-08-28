@@ -2,7 +2,6 @@ package haypoints;
 
 import kattio.Kattio;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -10,33 +9,34 @@ import java.util.regex.Pattern;
 
 public class HayPoints2 {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Kattio scan = new Kattio(System.in);
-        Tokenizer2 token = Tokenizer2.getInstance();
         int dictionarySize = scan.getInt();
         int jobDescriptions = scan.getInt();
-
-        Map<String, Integer> responsibilities = new HashMap<>();
+        Map<String, Integer> job = new HashMap<>();
+        int total = 0;
 
         for (int i = 0; i < dictionarySize; i++) {
-            responsibilities.put(scan.getWord(), scan.getInt());
+            job.put(scan.getWord(), scan.getInt());
         }
 
         for (int i = 0; i < jobDescriptions; i++) {
             while (scan.hasMoreTokens()) {
-                String line = scan.getWord();
-                if (line.equals(".")) {
+                String word = scan.getWord();
+                if (word.equals(".")) {
+                    System.out.println(total);
+                    total = 0;
                     break;
                 }
-                token.stringBuilder.append(line).append(" ");
+                if (job.containsKey(word)) {
+                    total += job.get(word);
+                }
             }
-            System.out.println(calculateSalary(token, responsibilities));
-            token.stringBuilder.setLength(0);
         }
         scan.close();
     }
 
-    static int calculateSalary(Tokenizer2 token, Map<String, Integer> map) {
+    static int calculateSalary(Tokenizer token, Map<String, Integer> map) {
         String string = token.stringBuilder.toString();
         int totalSalary = 0;
 
@@ -51,21 +51,5 @@ public class HayPoints2 {
             totalSalary += map.get(str) * cnt;
         }
         return totalSalary;
-    }
-}
-
-class Tokenizer2 {
-    static Tokenizer2 tokenizer = null;
-    StringBuilder stringBuilder;
-
-    private Tokenizer2() {
-        stringBuilder = new StringBuilder();
-    }
-
-    static Tokenizer2 getInstance() {
-        if (tokenizer == null) {
-            tokenizer = new Tokenizer2();
-        }
-        return tokenizer;
     }
 }

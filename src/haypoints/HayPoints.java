@@ -25,26 +25,30 @@ public class HayPoints {
                 ".\n" +
                 "this individual must have the skill to perform a heart transplant and\n" +
                 "expertise in rocket science\n" +
-                ".";
+                ".\n";
 
-        Scanner scan = new Scanner(input);
-        Tokenizer token = Tokenizer.getInstance();
+        Scanner scan = new Scanner(System.in);
 
         int dictionarySize = scan.nextInt();
         int jobDescriptions = scan.nextInt();
-        Map<String, Integer> responsibilities = new HashMap<>();
+        Map<String, Integer> job = new HashMap<>();
+        int total = 0;
 
         for (int i = 0; i < dictionarySize; i++) {
-            responsibilities.put(scan.next(), scan.nextInt());
+            job.put(scan.next(), scan.nextInt());
         }
 
-        while (scan.hasNext()) {
-            String line = scan.nextLine();
-            if (!line.equals(".")) {
-                token.stringBuilder.append(line).append(" ");
-            } else {
-                System.out.println(calculateSalary(token, responsibilities));
-                token.stringBuilder.setLength(0);
+        for (int i = 0; i < jobDescriptions; i++) {
+            while (scan.hasNext()) {
+                String word = scan.next();
+                if (word.equals(".")) {
+                    System.out.println(total);
+                    total = 0;
+                    break;
+                }
+                if (job.containsKey(word)) {
+                    total += job.get(word);
+                }
             }
         }
     }

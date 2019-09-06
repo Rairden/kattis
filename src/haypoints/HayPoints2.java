@@ -1,6 +1,6 @@
 package haypoints;
 
-import kattio.Kattio;
+import lib.kattio.Kattio;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -26,7 +26,7 @@
  *
  * @author: Kattis
  */
-package kattio;
+package lib.kattio;
 import java.util.StringTokenizer;
 import java.io.BufferedReader;
 import java.io.BufferedOutputStream;

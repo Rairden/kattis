@@ -15,10 +15,10 @@ public class TemperatureConfusion {
             String numString = strArr[i];
             faren[i] = Integer.parseInt(numString);
         }
-        // now subtract 32      (-6/4 - 32/1)
+        // now subtract 32                  (-6/4 - 32/1)
         int[] highTerm32 = getCommonDenom(faren[1]);
 
-        // now subtract the numerators
+        // now subtract the numerators      (-6/4 - 128/4)
         int[] addedFractions = new int[2];
         addedFractions[0] = faren[0] + highTerm32[0];
         addedFractions[1] = faren[1];

@@ -1,5 +1,6 @@
 package crackingrsa;
 
+import lib.math.MyMath;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -32,16 +33,16 @@ class CrackingRSATest {
 
     @Test
     void isPrime() {
-        assertFalse(CrackingRSA.isPrime(1));
-        assertTrue(CrackingRSA.isPrime(2));
-        assertTrue(CrackingRSA.isPrime(997));
-        assertTrue(CrackingRSA.isPrime(140863));
-        assertTrue(CrackingRSA.isPrime(919313));
-        assertTrue(CrackingRSA.isPrime(8114231289041741L));
+        assertFalse(MyMath.isPrime(1));
+        assertTrue(MyMath.isPrime(2));
+        assertTrue(MyMath.isPrime(997));
+        assertTrue(MyMath.isPrime(140863));
+        assertTrue(MyMath.isPrime(919313));
+        assertTrue(MyMath.isPrime(8114231289041741L));
     }
 
     @Test
     void gcd() {
-        assertEquals(1, CrackingRSA.gcd(8114231289041741L, 5));
+        assertEquals(1, MyMath.gcd(8114231289041741L, 5));
     }
 }

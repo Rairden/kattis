@@ -4,23 +4,6 @@ import java.util.*;
 
 public class Cup implements Comparable<Cup> {
 
-    int radius;
-    String color;
-
-    public Cup(String color, int radius) {
-        this.radius = radius;
-        this.color = color;
-    }
-
-    @Override
-    public int compareTo(Cup o) {
-        int i = this.radius - o.radius;
-        if (i != 0) {
-            return i;
-        }
-        return this.radius - o.radius;
-    }
-
     public static void main(String[] args) {
         String input = "3\n" +
                 "red 10\n" +
@@ -48,5 +31,22 @@ public class Cup implements Comparable<Cup> {
         for (Cup cup : cups) {
             System.out.println(cup.color);
         }
+    }
+
+    int radius;
+    String color;
+
+    public Cup(String color, int radius) {
+        this.radius = radius;
+        this.color = color;
+    }
+
+    @Override
+    public int compareTo(Cup o) {
+        int i = this.radius - o.radius;
+        if (i != 0) {
+            return i;
+        }
+        return this.radius - o.radius;
     }
 }

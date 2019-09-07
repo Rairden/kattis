@@ -28,10 +28,10 @@ public class GrowlingGears {
         for (int i = 0; i < testCases; i++) {
             int numGears = scan.nextInt();
             for (int k = 0; k < numGears; k++) {
-                int first   = scan.nextInt();
-                int second  = scan.nextInt();
-                int third   = scan.nextInt();
-                Gear gear = new Gear(k+1, first, second, third);
+                int a   = scan.nextInt();
+                int b   = scan.nextInt();
+                int c   = scan.nextInt();
+                Gear gear = new Gear(k+1, a, b, c);
                 engine.add(gear);
             }
             if (engine.size() == 1) {
@@ -54,21 +54,21 @@ class Gear implements Comparable<Gear> {
     double torque;
     int[] coefficients;
 
-    Gear(int gear, int first, int second, int third) {
+    Gear(int gear, int a, int b, int c) {
         this.coefficients = new int[3];
         this.gear = gear;
-        coefficients[0] = first;
-        coefficients[1] = second;
-        coefficients[2] = third;
+        coefficients[0] = a;
+        coefficients[1] = b;
+        coefficients[2] = c;
     }
 
     static double torqueOutput(int[] cf) {
-        double x = vertexFormula(cf[1], cf[0]);
-        double a = cf[0];    float b = cf[1];    float c = cf[2];
+        double x = vertexFormula(cf[0], cf[1]);
+        double a = cf[0], b = cf[1], c = cf[2];
         return -a*x*x + b*x + c;
     }
 
-    static double vertexFormula(int b, int a) {
+    static double vertexFormula(int a, int b) {
         double x = (double) -b / (2 * a);
         return Math.abs(x);
     }

@@ -1,6 +1,7 @@
 package veci;
 
 import java.util.*;
+import static veci.IntegerToList.splitNumber;
 
 public class Main {
 
@@ -11,7 +12,7 @@ public class Main {
         constructFirstNum(number);
     }
 
-    public static void constructFirstNum(int number) {
+    static void constructFirstNum(int number) {
         IntegerToList convert = IntegerToList.getInstance();
 
         String str = String.valueOf(number);
@@ -22,38 +23,38 @@ public class Main {
             convert.firstNum.add(Integer.parseInt(s));
         }
 
-        for (Integer integer : IntegerToList.convert.firstNum) {
+        for (Integer integer : convert.firstNum) {
             if (integer == 0)
-                IntegerToList.convert.zero++;
+                convert.zero++;
             else if (integer == 1)
-                IntegerToList.convert.one++;
+                convert.one++;
             else if (integer == 2)
-                IntegerToList.convert.two++;
+                convert.two++;
             else if (integer == 3)
-                IntegerToList.convert.three++;
+                convert.three++;
             else if (integer == 4)
-                IntegerToList.convert.four++;
+                convert.four++;
             else if (integer == 5)
-                IntegerToList.convert.five++;
+                convert.five++;
             else if (integer == 6)
-                IntegerToList.convert.six++;
+                convert.six++;
             else if (integer == 7)
-                IntegerToList.convert.seven++;
+                convert.seven++;
             else if (integer == 8)
-                IntegerToList.convert.eight++;
+                convert.eight++;
             else if (integer == 9)
-                IntegerToList.convert.nine++;
+                convert.nine++;
         }
         findMatchingNumber(number, length);
     }
 
-    public static void findMatchingNumber(int number, int length) {
+    static void findMatchingNumber(int number, int length) {
         int limit = (int) Math.pow(10, length) - 1;     // If number is 27,711  then limit = 10^5 - 1 = 99,999
         int zero = 0, one = 0, two = 0, three = 0, four = 0, five = 0, six = 0, seven = 0, eight = 0, nine = 0;
 
         while (number <= limit) {
             number++;
-            IntegerToList.splitNumber(number);
+            splitNumber(number);
             for (Integer integer : IntegerToList.convert.secondNum) {
                 if (integer == 0)
                     zero++;

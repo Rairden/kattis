@@ -39,8 +39,9 @@ public class Simplicity {
                 if (chars.size() == 2) {
                     return 0;
                 } else {
+                    int cnt = chars.get(0).count;
                     chars.remove(0);
-                    removed++;
+                    removed += cnt;
                     if (chars.size() == 2 || chars.size() == 1) {
                         return removed;
                     }
@@ -114,10 +115,10 @@ class Chars implements Comparable<Chars> {
 
     @Override
     public int compareTo(Chars o) {
-        int i = o.count - this.count;
+        int i = this.count - o.count;
         if (i != 0) {
             return i;
         }
-        return o.count - this.count;
+        return this.count - o.count;
     }
 }

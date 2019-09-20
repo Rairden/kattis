@@ -8,7 +8,8 @@ class SimplicityTest {
 
     @Test
     void simplicity() {
-        assertEquals(4, Simplicity.simplicity("aaaaaabbbbbccccdddeef"));
+        assertEquals(10, Simplicity.simplicity("aaaaaabbbbbccccdddeef"));
+        assertEquals(48, Simplicity.simplicity("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"));
         assertEquals(1, Simplicity.simplicity("abc"));
         assertEquals(0, Simplicity.simplicity("abb"));
         assertEquals(2, Simplicity.simplicity("abcd"));

@@ -56,7 +56,7 @@ class GuessTheDataStructureTest {
     }
 
     @Test
-    void findStructure() {
+    void calcStructure() {
         assertEquals("queue", GuessTheDataStructure.calcStructure(q1).name);
         assertEquals("not sure", GuessTheDataStructure.calcStructure(ns).name);
         assertEquals("impossible", GuessTheDataStructure.calcStructure(i1).name);

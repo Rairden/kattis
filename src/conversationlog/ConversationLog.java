@@ -69,28 +69,22 @@ class User {
     }
 
     int allSetsContainWord(Map<String, User> map, String uniqueWord) {
-        boolean allSetsContainWord = true;
         Collection<User> values = map.values();
         for (User user : values) {
             if (!user.uniqueWords.contains(uniqueWord)) {
                 skipWords.add(uniqueWord);
-                allSetsContainWord = false;
-                break;
+                return 0;
             }
         }
-        if (allSetsContainWord) {
-            int cnt = 0;
-            for (User user : values) {
-                for (String word : user.words) {
-                    if (word.equals(uniqueWord)) {
-                        cnt++;
-                    }
+        int cnt = 0;
+        for (User user : values) {
+            for (String word : user.words) {
+                if (word.equals(uniqueWord)) {
+                    cnt++;
                 }
             }
-            return cnt;
-        } else {
-            return 0;
         }
+        return cnt;
     }
 }
 

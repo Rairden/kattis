@@ -1,4 +1,4 @@
-package lib.kattio;
+package lib.io;
 
 import java.util.StringTokenizer;
 import java.io.BufferedReader;

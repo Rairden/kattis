@@ -1,5 +1,6 @@
 package triangle;
-import lib.kattio.Kattio;
+
+import lib.io.Kattio;
 
 public class Triangle {
 

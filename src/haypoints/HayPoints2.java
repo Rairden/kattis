@@ -1,6 +1,6 @@
 package haypoints;
 
-import lib.kattio.Kattio;
+import lib.io.Kattio;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,19 +10,19 @@ import java.util.regex.Pattern;
 public class HayPoints2 {
 
     public static void main(String[] args) {
-        Kattio scan = new Kattio(System.in);
-        int dictionarySize = scan.getInt();
-        int jobDescriptions = scan.getInt();
+        Kattio io = new Kattio(System.in);
+        int dictionarySize = io.getInt();
+        int jobDescriptions = io.getInt();
         Map<String, Integer> job = new HashMap<>();
         int total = 0;
 
         for (int i = 0; i < dictionarySize; i++) {
-            job.put(scan.getWord(), scan.getInt());
+            job.put(io.getWord(), io.getInt());
         }
 
         for (int i = 0; i < jobDescriptions; i++) {
-            while (scan.hasMoreTokens()) {
-                String word = scan.getWord();
+            while (io.hasMoreTokens()) {
+                String word = io.getWord();
                 if (word.equals(".")) {
                     System.out.println(total);
                     total = 0;
@@ -33,7 +33,7 @@ public class HayPoints2 {
                 }
             }
         }
-        scan.close();
+        io.close();
     }
 
     static int calculateSalary(Tokenizer token, Map<String, Integer> map) {

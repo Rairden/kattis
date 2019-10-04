@@ -1,6 +1,6 @@
 package triangle;
 
-import lib.kattio.Kattio;
+import lib.io.Kattio;
 import java.io.*;
 import java.util.*;
 

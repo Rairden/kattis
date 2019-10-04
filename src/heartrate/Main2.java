@@ -1,6 +1,6 @@
 package heartrate;
 
-import lib.kattio.Kattio;
+import lib.io.Kattio;
 
 public class Main2 {
 

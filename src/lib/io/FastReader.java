@@ -1,8 +1,6 @@
 package lib.io;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class FastReader {
@@ -11,6 +9,19 @@ public class FastReader {
 
     public FastReader() {
         br = new BufferedReader(new InputStreamReader(System.in));
+    }
+
+    public FastReader(String in) {
+        InputStream targetStream = convertStringToInputStream(in);
+        br = new BufferedReader(new InputStreamReader(targetStream));
+    }
+
+    public FastReader(StringBuilder fileName) throws FileNotFoundException {
+        br = new BufferedReader(new FileReader(String.valueOf(fileName)));
+    }
+
+    public FastReader(InputStream in) {
+        br = new BufferedReader(new InputStreamReader(in));
     }
 
     public String next() {
@@ -32,6 +43,10 @@ public class FastReader {
         return Long.parseLong(next());
     }
 
+    public float nextFloat() {
+        return Float.parseFloat(next());
+    }
+
     public double nextDouble() {
         return Double.parseDouble(next());
     }
@@ -44,5 +59,10 @@ public class FastReader {
             e.printStackTrace();
         }
         return str;
+    }
+
+    public InputStream convertStringToInputStream(String str) {
+        InputStream targetStream = new ByteArrayInputStream(str.getBytes());
+        return targetStream;
     }
 }

@@ -6,7 +6,7 @@ I ended up getting 0.16 sec on kattis. The hard part is writing fast code to fin
 
 ![](../../docs/primeFactorize.png)
 
-Here is code I originally wrote, which tries to find every single divisor of an integer. So if p = 900,000,000 then you will iterate over it that many times. You can get that number down to 30,000 if you realize divisors are duplicated past the midpoint and take the root $\sqrt{900,000,000}$ = 30,000
+Here is code I originally wrote, which tries to find every single divisor of an integer. So if p = 900,000,000 then you will iterate over it that many times. You can get that number down to 30,000 if you realize divisors are duplicated past the midpoint and take the root &radic;900,000,000 = 30,000
 
 ## Before - time limit exceeded
 ```java
@@ -88,3 +88,8 @@ not using `lookup List` with n = 100,000 plus all 42 _almost perfect_ numbers. R
 
 using the `lookup List` with n = 100,042.  This is 53x faster than above doing it manually  
 * 138 ms
+
+# Conclusion
+## The lookup List helps a lot for large inputs
+For input sizes of 500 or 10000, it doesn't really make a huge difference.  
+Although if `n` = 100,000 then it makes an enormous difference.  

@@ -7,7 +7,7 @@ Perfect numbers are rare; only 50 of them are known (as of 2017). Perhaps the de
 Input consists of a sequence of up to 500 integers, one per line. Each integer is in the range 2 to 10<sup>9</sup> (inclusive). Input ends at end of file.
 
 ## Output
-For each input value, output the same value and then one of the following: “perfect” (if the number is perfect), “almost perfect” (if it is almost perfect but not perfect), or “not perfect” (otherwise).
+For each input value, output the same value and then one of the following: "perfect" (if the number is perfect), "almost perfect" (if it is almost perfect but not perfect), or "not perfect" (otherwise).
 
 
 `Sample Input 1	/ Sample Output 1`

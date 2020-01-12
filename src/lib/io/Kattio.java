@@ -1,22 +1,33 @@
 package lib.io;
 
+import java.io.*;
 import java.util.StringTokenizer;
-import java.io.BufferedReader;
-import java.io.BufferedOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.io.OutputStream;
 
 public class Kattio extends PrintWriter {
+    private BufferedReader r;
+    private String line;
+    private StringTokenizer st;
+    private String token;
+
     public Kattio(InputStream i) {
         super(new BufferedOutputStream(System.out));
         r = new BufferedReader(new InputStreamReader(i));
     }
+
     public Kattio(InputStream i, OutputStream o) {
         super(new BufferedOutputStream(o));
         r = new BufferedReader(new InputStreamReader(i));
+    }
+
+    public Kattio(String in) {
+        super(new BufferedOutputStream(System.out));
+        InputStream targetStream = convertStringToInputStream(in);
+        r = new BufferedReader(new InputStreamReader(targetStream));
+    }
+
+    public Kattio(StringBuilder fileName) throws FileNotFoundException {
+        super(new BufferedOutputStream(System.out));
+        r = new BufferedReader(new FileReader(String.valueOf(fileName)));
     }
 
     public boolean hasMoreTokens() {
@@ -39,13 +50,6 @@ public class Kattio extends PrintWriter {
         return nextToken();
     }
 
-
-
-    private BufferedReader r;
-    private String line;
-    private StringTokenizer st;
-    private String token;
-
     private String peekToken() {
         if (token == null)
             try {
@@ -63,5 +67,10 @@ public class Kattio extends PrintWriter {
         String ans = peekToken();
         token = null;
         return ans;
+    }
+
+    public InputStream convertStringToInputStream(String str) {
+        InputStream targetStream = new ByteArrayInputStream(str.getBytes());
+        return targetStream;
     }
 }

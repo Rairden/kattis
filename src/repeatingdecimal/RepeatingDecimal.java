@@ -8,8 +8,13 @@ import java.math.RoundingMode;
 public class RepeatingDecimal {
 
     public static void main(String[] args) {
-
-        Kattio io = new Kattio(System.in);
+        String in = """
+                3 7 10
+                199 200 1
+                9 35 25
+                7 10 3
+                """;
+        Kattio io = new Kattio(in);
 
         while (io.hasMoreTokens()) {
             BigDecimal a = BigDecimal.valueOf(io.getDouble());

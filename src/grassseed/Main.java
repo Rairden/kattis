@@ -5,8 +5,13 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
-        Scanner scan = new Scanner(System.in);
+        String in = """
+                0.75
+                2
+                2 3.333
+                3.41 4.567
+                """;
+        Scanner scan = new Scanner(in);
 
         double  RATE_PER_METER = 0;
         int     NUMBER_OF_LAWNS = 0;

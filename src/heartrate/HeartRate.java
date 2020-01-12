@@ -2,14 +2,19 @@ package heartrate;
 
 import java.util.Scanner;
 
-public class Main {
+public class HeartRate {
 
     public static void main(String[] args) {
         bpm();
     }
 
     private static void bpm() {
-        Scanner scan = new Scanner(System.in);
+        String in = """
+                2
+                6 5.0000
+                2 3.1222
+                """;
+        Scanner scan = new Scanner(in);
         int n = scan.nextInt();
 
         for (int i = 0; i < n; i++) {

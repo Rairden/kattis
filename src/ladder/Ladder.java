@@ -2,11 +2,11 @@ package ladder;
 
 import java.util.Scanner;
 
-public class Main {
+public class Ladder {
 
     public static void main(String[] args) {
-
-        Scanner scan = new Scanner(System.in);
+        String in = "500 70\n";
+        Scanner scan = new Scanner(in);
         double wallHeight = scan.nextInt();
         double theta = scan.nextInt();
 

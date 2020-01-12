@@ -3,7 +3,7 @@ package veci;
 import java.util.*;
 import static veci.IntegerToList.splitNumber;
 
-public class Main {
+public class Veci {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);

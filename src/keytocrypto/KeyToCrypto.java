@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class KeyToCrypto {
 
     public static void main(String[] args) {
-        String input = "SGZVQBUQAFRWSLC\nACM";
-        Scanner scan = new Scanner(input);
+        String in = """
+                SGZVQBUQAFRWSLC
+                ACM
+                """;
+        Scanner scan = new Scanner(in);
         decryptMessage(scan.nextLine(), scan.nextLine());
     }
 

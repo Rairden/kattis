@@ -2,7 +2,7 @@ package twostones;
 
 import java.util.Scanner;
 
-public class Main {
+public class TwoStones {
 
     public static void main(String[] args) {
 

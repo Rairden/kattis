@@ -2,7 +2,7 @@ package abc;
 
 import java.util.Scanner;
 
-public class Main {
+public class Abc {
 
     public static void main(String[] args) {
         String input = "1 5 3\nABC";

@@ -75,7 +75,7 @@ I tweaked it with the square root loop. Using 10 threads took 1-2 hours while I 
 So I imagine using this cheater lookup list should be faster. So let's get a bigger `n` value. Kattis only uses `n` = 500 for the number of inputs.  
 I compare both snippets of code above using a large number of inputs `n` = 10,042 and 100,042  
 
-not using `lookup List` with n = 10,00 plus all 42 _almost perfect_ numbers.  Range: 900,000,000 - 900,009,999  
+not using `lookup List` with n = 10,000 plus all 42 _almost perfect_ numbers.  Range: 900,000,000 - 900,009,999  
 * 775 ms
 
 using the `lookup List` with n = 10,042.  This is 17x faster than above doing it manually  

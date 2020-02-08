@@ -36,15 +36,16 @@ Then for each query x, output 1 if x is a `prime` and output 0 if x is `composit
 ### Hint: use this algo
 [en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Algorithm_and_variants](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Algorithm_and_variants)  
 [en.wikipedia.org/wiki/Prime-counting_function#Table_of_%CF%80(x)](https://en.wikipedia.org/wiki/Prime-counting_function#Table_of_%CF%80(x),_x_/_ln_x,_and_li(x\))  
-**algorithm** Sieve of Eratosthenes **is**  **input**: an integer _n_ > 1.  
-**output**: all prime numbers from 2 through _n_.  
+**algorithm** Sieve of Eratosthenes **is**  
+&#160; &#160; **input**: an integer _n_ > 1.  
+&#160; &#160; **output**: all prime numbers from 2 through _n_.  
 
-**let** _A_ be an **array of [Boolean](https://en.wikipedia.org/wiki/Boolean_data_type "Boolean data type")** values, indexed by **integer**s 2 to _n_,  
-initially all **set** to **true**.  
+&#160; &#160; **let** _A_ be an **array of boolean values** values, indexed by **integer**s 2 to _n_,  
+&#160; &#160; initially all **set** to **true**.  
 
-**for** i = 2, 3, 4, ..., not exceeding _√n_ **do**  
-&nbsp; &nbsp; **if** _A_[i] **is** **true**  
-&nbsp; &nbsp; &nbsp; &nbsp; **for** _j_ = i<sup>2</sup>, i<sup>2</sup>+i, i<sup>2</sup>+2i, i<sup>2</sup>+3i, ..., not exceeding _n_ **do**  
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _A_[_j_] := **false**  
+&#160; &#160; **for** i = 2, 3, 4, ..., not exceeding _√n_ **do**  
+&#160; &#160; **if** _A_[i] **is** **true**  
+&#160; &#160; &#160; &#160; **for** _j_ = i<sup>2</sup>, i<sup>2</sup>+i, i<sup>2</sup>+2i, i<sup>2</sup>+3i, ..., not exceeding _n_ **do**  
+&#160; &#160; &#160; &#160; &#160; &#160; _A_[_j_] := **false**  
 
-**return** all i such that _A_[i] **is** **true**.  
+&#160; &#160; **return** all i such that _A_[i] **is** **true**.  

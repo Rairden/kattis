@@ -10,15 +10,17 @@ public class GrowlingGears {
 
     public static void main(String[] args) {
 
-        String input = "3\n" +
-                "1\n" +
-                "1 4 2\n" +
-                "2\n" +
-                "3 126 1400\n" +
-                "2 152 208\n" +
-                "2\n" +
-                "3 127 1400\n" +
-                "2 154 208\n";
+        String input = """
+                3
+                1
+                1 4 2
+                2
+                3 126 1400
+                2 152 208
+                2
+                3 127 1400
+                2 154 208
+                """;
 
         Scanner scan = new Scanner(input);
         int testCases = scan.nextInt();

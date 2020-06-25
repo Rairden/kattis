@@ -5,10 +5,12 @@ import java.util.*;
 public class Cup implements Comparable<Cup> {
 
     public static void main(String[] args) {
-        String input = "3\n" +
-                "red 10\n" +
-                "10 blue\n" +
-                "green 7\n";
+        String input = """
+                3
+                red 10
+                10 blue
+                green 7
+                """;
 
         Scanner scan    = new Scanner(input);
         List<Cup> cups  = new ArrayList<>();

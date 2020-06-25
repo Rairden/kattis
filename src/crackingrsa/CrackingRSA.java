@@ -7,10 +7,12 @@ import java.util.Scanner;
 public class CrackingRSA {
 
     public static void main(String[] args) {
-        String input = "3\n" +
-                "33 3\n" +
-                "65 11\n" +
-                "6012707 3674911\n";
+        String input = """
+                3
+                33 3
+                65 11
+                6012707 3674911
+                """;
 
         Scanner scan = new Scanner(input);
         int numKeys = scan.nextInt();

@@ -10,22 +10,24 @@ public class HayPoints {
 
     public static void main(String[] args) {
 
-        String input = "7 2\n" +
-                "administer 100000\n" +
-                "spending 200000\n" +
-                "manage 50000\n" +
-                "responsibility 25000\n" +
-                "expertise 100\n" +
-                "skill 50\n" +
-                "money 75000\n" +
-                "the incumbent will administer the spending of kindergarden milk money\n" +
-                "and exercise responsibility for making change he or she will share\n" +
-                "responsibility for the task of managing the money with the assistant\n" +
-                "whose skill and expertise shall ensure the successful spending exercise\n" +
-                ".\n" +
-                "this individual must have the skill to perform a heart transplant and\n" +
-                "expertise in rocket science\n" +
-                ".\n";
+        String input = """
+                7 2
+                administer 100000
+                spending 200000
+                manage 50000
+                responsibility 25000
+                expertise 100
+                skill 50
+                money 75000
+                the incumbent will administer the spending of kindergarden milk money
+                and exercise responsibility for making change he or she will share
+                responsibility for the task of managing the money with the assistant
+                whose skill and expertise shall ensure the successful spending exercise
+                .
+                this individual must have the skill to perform a heart transplant and
+                expertise in rocket science
+                .
+                """;
 
         Scanner scan = new Scanner(System.in);
 

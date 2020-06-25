@@ -8,19 +8,21 @@ public class WeakVertices {
 
     public static void main(String[] args) {
 
-        String input = "9\n" +
-                "0 1 1 1 0 0 0 0 0\n" +
-                "1 0 0 0 0 0 1 0 0\n" +
-                "1 0 0 1 0 1 0 0 0\n" +
-                "1 0 1 0 0 1 1 0 0\n" +
-                "0 0 0 0 0 0 1 1 0\n" +
-                "0 0 1 1 0 0 0 0 0\n" +
-                "0 1 0 1 1 0 0 1 0\n" +
-                "0 0 0 0 1 0 1 0 1\n" +
-                "0 0 0 0 0 0 0 1 0\n" +
-                "1\n" +
-                "0\n" +
-                "-1\n";
+        String input = """
+                9
+                0 1 1 1 0 0 0 0 0
+                1 0 0 0 0 0 1 0 0
+                1 0 0 1 0 1 0 0 0
+                1 0 1 0 0 1 1 0 0
+                0 0 0 0 0 0 1 1 0
+                0 0 1 1 0 0 0 0 0
+                0 1 0 1 1 0 0 1 0
+                0 0 0 0 1 0 1 0 1
+                0 0 0 0 0 0 0 1 0
+                1
+                0
+                -1
+                """;
 
         Scanner scan = new Scanner(input);
         TempList vertex = TempList.getInstance();

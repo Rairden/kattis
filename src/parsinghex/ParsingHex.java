@@ -8,9 +8,11 @@ public class ParsingHex {
 
     public static void main(String[] args) {
 
-        String input = "uyzrr0x5206aBCtrrwm0Xa8aD4poqwqr\n" +
-                "pqovx0x6d3e6-+ 230xB6fcgmmm\n" +
-                "0xffffffff\n";
+        String input = """
+                uyzrr0x5206aBCtrrwm0Xa8aD4poqwqr
+                pqovx0x6d3e6-+ 230xB6fcgmmm
+                0xffffffff
+                """;
         var scan = new Scanner(input);
 
         // https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/Integer.html#parseInt(java.lang.String,int)

@@ -7,14 +7,18 @@ import java.util.Scanner;
 public class Semafori {
 
     public static void main(String[] args) {
-        String input1 = "2 10\n" +
-                "3 5 5\n" +
-                "5 2 2\n";
-        String input2 = "4 30\n" +
-                "7 13 5\n" +
-                "14 4 4\n" +
-                "15 3 10\n" +
-                "25 1 1\n";
+        String input1 = """
+                2 10
+                3 5 5
+                5 2 2
+                """;
+        String input2 = """
+                4 30
+                7 13 5
+                14 4 4
+                15 3 10
+                25 1 1
+                """;
 
         Scanner scan = new Scanner(input2);
         int numLights = scan.nextInt();

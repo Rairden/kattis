@@ -50,8 +50,7 @@ public class TemperatureConfusion {
     }
 
     static int gcd(int a, int b) {
-        if (b == 0)
-            return a;
+        if (b == 0) return a;
         return Math.abs(gcd(b, a % b));
     }
 }

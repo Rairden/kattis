@@ -36,16 +36,13 @@ public class Simplicity {
             Collections.sort(chars);
             int removed = 0;
             for (Iterator<Chars> itr = chars.iterator(); itr.hasNext(); ) {
-                if (chars.size() == 2) {
-                    return 0;
-                } else {
-                    int cnt = chars.get(0).count;
-                    chars.remove(0);
-                    removed += cnt;
-                    if (chars.size() == 2 || chars.size() == 1) {
-                        return removed;
-                    }
-                }
+                if (chars.size() == 2) return 0;
+
+                int cnt = chars.get(0).count;
+                chars.remove(0);
+                removed += cnt;
+
+                if (chars.size() == 2 || chars.size() == 1) return removed;
             }
             return removed;
         }
@@ -80,9 +77,8 @@ public class Simplicity {
             String rep = Character.toString(str.charAt(0));
             rep = rep.repeat(str.length());
             return str.equals(rep);
-        } else {
-            return false;
         }
+        return false;
     }
 
     static int numMatches(String string, String ch) {

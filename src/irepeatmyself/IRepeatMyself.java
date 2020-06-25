@@ -8,14 +8,16 @@ public class IRepeatMyself {
 
     public static void main(String[] args) {
 
-        String input = "7\n" +
-                "I Repeat Myself I Repeat Myself I Repeat\n" +
-                "aaaaaaaaaaaaaaaaaaaaa\n" +
-                "abbcabbcabbabbcabb\n" +
-                "a\n" +
-                "aa\n" +
-                "ab\n" +
-                "baba\n";
+        String input = """
+                7
+                I Repeat Myself I Repeat Myself I Repeat
+                aaaaaaaaaaaaaaaaaaaaa
+                abbcabbcabbabbcabb
+                a
+                aa
+                ab
+                baba
+                """;
 
         Scanner scan = new Scanner(input);
         int testCases = scan.nextInt();

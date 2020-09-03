@@ -1,0 +1,12 @@
+13
+length + width + 3 + depth
+length = 0
+length + width + 3 + depth
+width = 0
+length + width + 3 + depth
+depth = 0
+length + width + 0 + depth
+depth = 1
+length + width + 3 + depth
+computercost + televisioncost
+0

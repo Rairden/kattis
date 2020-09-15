@@ -2,15 +2,18 @@ package dicecup;
 
 import java.util.Scanner;
 
+// https://open.kattis.com/problems/dicecup
+
 public class DiceCup {
 
     public static void main(String[] args) {
+        String in = "12 20\n";
 
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(in);
         int x = scan.nextInt();
         int y = scan.nextInt();
 
-        possibleValues(12, 20);
+        possibleValues(x, y);
     }
 
     public static void possibleValues(int x, int y) {

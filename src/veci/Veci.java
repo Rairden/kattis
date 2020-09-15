@@ -3,10 +3,13 @@ package veci;
 import java.util.*;
 import static veci.IntegerToList.splitNumber;
 
+// https://open.kattis.com/problems/veci
+
 public class Veci {
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        String in = "156";
+        Scanner scan = new Scanner(in);
         int number = scan.nextInt();
 
         constructFirstNum(number);
@@ -24,26 +27,18 @@ public class Veci {
         }
 
         for (Integer integer : convert.firstNum) {
-            if (integer == 0)
-                convert.zero++;
-            else if (integer == 1)
-                convert.one++;
-            else if (integer == 2)
-                convert.two++;
-            else if (integer == 3)
-                convert.three++;
-            else if (integer == 4)
-                convert.four++;
-            else if (integer == 5)
-                convert.five++;
-            else if (integer == 6)
-                convert.six++;
-            else if (integer == 7)
-                convert.seven++;
-            else if (integer == 8)
-                convert.eight++;
-            else if (integer == 9)
-                convert.nine++;
+            switch (integer) {
+                case 0 -> convert.zero += 1;
+                case 1 -> convert.one += 1;
+                case 2 -> convert.two += 1;
+                case 3 -> convert.three += 1;
+                case 4 -> convert.four += 1;
+                case 5 -> convert.five += 1;
+                case 6 -> convert.six += 1;
+                case 7 -> convert.seven += 1;
+                case 8 -> convert.eight += 1;
+                case 9 -> convert.nine += 1;
+            }
         }
         findMatchingNumber(number, length);
     }
@@ -56,26 +51,18 @@ public class Veci {
             number++;
             splitNumber(number);
             for (Integer integer : IntegerToList.convert.secondNum) {
-                if (integer == 0)
-                    zero++;
-                else if (integer == 1)
-                    one++;
-                else if (integer == 2)
-                    two++;
-                else if (integer == 3)
-                    three++;
-                else if (integer == 4)
-                    four++;
-                else if (integer == 5)
-                    five++;
-                else if (integer == 6)
-                    six++;
-                else if (integer == 7)
-                    seven++;
-                else if (integer == 8)
-                    eight++;
-                else if (integer == 9)
-                    nine++;
+                switch (integer) {
+                    case 0 -> zero++;
+                    case 1 -> one++;
+                    case 2 -> two++;
+                    case 3 -> three++;
+                    case 4 -> four++;
+                    case 5 -> five++;
+                    case 6 -> six++;
+                    case 7 -> seven++;
+                    case 8 -> eight++;
+                    case 9 -> nine++;
+                }
             }
 
             // compare firstNum to secondNum, then reset the counters to 0 if it doesn't pass test.

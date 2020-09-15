@@ -2,8 +2,10 @@ package backspace;
 
 import lib.io.FastReader;
 
+// https://open.kattis.com/problems/backspace
+
 public class Backspace {
-    // https://open.kattis.com/problems/backspace
+
     public static void main(String[] args) {
         FastReader io = new FastReader(System.in);
         System.out.println(backspace(io.nextLine()));

@@ -2,6 +2,8 @@ package downtime;
 
 import lib.io.FastReader;
 
+// https://open.kattis.com/problems/downtime
+
 public class Downtime {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class Downtime {
         System.out.println(calcNumberOfServers(requests, rps));
     }
 
+    // this produces a wrong answer
     static int calcNumberOfServers(int[] requests, int rps) {
         prevBase = requests[0];
         for (int i = 0; i < requests.length; i++) {

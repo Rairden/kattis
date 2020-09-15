@@ -1,17 +1,21 @@
 package guessthedatastructure;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 
 import static guessthedatastructure.DataStruct.*;
 import static guessthedatastructure.Operation.*;
 
+// https://open.kattis.com/problems/guessthedatastructure
+
 class GuessTheDataStructure {
 
-    public static void main(String[] args) {
-        String full = "6\n1 1\n1 2\n1 3\n2 1\n2 2\n2 3\n6\n1 1\n1 2\n1 3\n2 3\n2 2\n2 1\n" +
-                "2\n1 1\n2 2\n4\n1 2\n1 1\n2 1\n2 2\n7\n1 2\n1 5\n1 1\n1 3\n2 5\n1 4\n2 4\n1\n2 1\n";
-        Scanner scan = new Scanner(full);
+    public static void main(String[] args) throws FileNotFoundException {
+
+        File file = new File("src/guessthedatastructure/in");
+        Scanner scan = new Scanner(file);
         GuessTheDataStructure.getInstance();
 
         while (scan.hasNextLine()) {
@@ -25,11 +29,11 @@ class GuessTheDataStructure {
         }
     }
 
-    public static Stack<Integer> stack;
-    public static Queue<Integer> queue;
-    public static PriorityQueue<Integer> pq;
-    public static StringBuilder sb;
-    public static GuessTheDataStructure structs = null;
+    static Stack<Integer> stack;
+    static Queue<Integer> queue;
+    static PriorityQueue<Integer> pq;
+    static StringBuilder sb;
+    static GuessTheDataStructure structs = null;
 
     private GuessTheDataStructure() {
         stack   = new Stack<>();
@@ -59,38 +63,30 @@ class GuessTheDataStructure {
         DataStruct ds = IMPOSSIBLE;
 
         if (stackTest(cmd)) {
-             if (priorityQueueTest(cmd)) {
-                return NOT_SURE;
-             } else if (queueTest(cmd)) {
-                 return NOT_SURE;
-             }
+            if (priorityQueueTest(cmd)) return NOT_SURE;
+            if (queueTest(cmd)) return NOT_SURE;
             ds = IS_A_STACK;
         }
         if (queueTest(cmd)) {
-            if (priorityQueueTest(cmd)) {
-                return NOT_SURE;
-            }
+            if (priorityQueueTest(cmd)) return NOT_SURE;
             ds = IS_A_QUEUE;
         }
         if (priorityQueueTest(cmd)) {
-            if (ds == IS_A_STACK || ds == IS_A_QUEUE) {
-                return NOT_SURE;
-            }
+            if (ds == IS_A_STACK || ds == IS_A_QUEUE) return NOT_SURE;
             ds = IS_A_PRIO_QUEUE;
         }
         return ds;
     }
 
+    // 1 2 1 1 2 1 2 2
     static boolean stackTest(int[] cmds) {
-        // 1 2 1 1 2 1 2 2
-        GuessTheDataStructure.getInstance();
+
         for (int i = 0; i < cmds.length; i += 2) {
             if (cmds[i] == PUSH.id) {
                 stack.push(cmds[i + 1]);
             } else if (cmds[i] == REMOVE.id) {
-                if (stack.isEmpty()) {
-                    return false;
-                }
+                if (stack.isEmpty()) return false;
+
                 int topStack = cmds[i + 1];
                 if (stack.peek() == topStack) {
                     stack.pop();
@@ -104,16 +100,15 @@ class GuessTheDataStructure {
         return true;
     }
 
+    // 1 1 1 2 1 3 2 1 2 2 2 3
     static boolean queueTest(int[] cmds) {
-        // 1 1 1 2 1 3 2 1 2 2 2 3
-        GuessTheDataStructure.getInstance();
+
         for (int i = 0; i < cmds.length; i += 2) {
             if (cmds[i] == PUSH.id) {
                 queue.add(cmds[i + 1]);
             } else if (cmds[i] == REMOVE.id) {
-                if (queue.isEmpty()) {
-                    return false;
-                }
+                if (queue.isEmpty()) return false;
+
                 int next = cmds[i + 1];
                 if (queue.peek() == next) {
                     queue.remove();
@@ -127,16 +122,15 @@ class GuessTheDataStructure {
         return true;
     }
 
+    // 1 2 1 5 1 1 1 3 2 5 1 4 2 4
     static boolean priorityQueueTest(int[] cmds) {
-        // 1 2 1 5 1 1 1 3 2 5 1 4 2 4
-        GuessTheDataStructure.getInstance();
+
         for (int i = 0; i < cmds.length; i += 2) {
             if (cmds[i] == PUSH.id) {
                 pq.add(cmds[i + 1]);
             } else if (cmds[i] == REMOVE.id) {
-                if (pq.isEmpty()) {
-                    return false;
-                }
+                if (pq.isEmpty()) return false;
+
                 int next = cmds[i + 1];
                 if (pq.peek() == next) {
                     pq.remove();

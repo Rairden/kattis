@@ -18,7 +18,6 @@ class IntegerToList {
         firstNum    = new ArrayList<>();
         secondNum   = new ArrayList<>();
         stack       = new Stack<>();
-        int zero = 0, one = 0, two = 0, three = 0, four = 0, five = 0, six = 0, seven = 0, eight = 0, nine = 0;
     }
 
     static IntegerToList getInstance() {

@@ -6,11 +6,13 @@ import java.util.List;
 import java.util.Scanner;
 import static growlinggears.Gear.torqueOutput;
 
+// https://open.kattis.com/problems/growlinggears
+
 public class GrowlingGears {
 
     public static void main(String[] args) {
 
-        String input = """
+        String in = """
                 3
                 1
                 1 4 2
@@ -22,7 +24,7 @@ public class GrowlingGears {
                 2 154 208
                 """;
 
-        Scanner scan = new Scanner(input);
+        Scanner scan = new Scanner(in);
         int testCases = scan.nextInt();
 
         List<Gear> engine = new ArrayList<>();

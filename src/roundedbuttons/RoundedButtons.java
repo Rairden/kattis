@@ -7,6 +7,8 @@ import java.util.List;
 
 import static roundedbuttons.Pair.*;
 
+// https://open.kattis.com/problems/roundedbuttons
+
 public class RoundedButtons {
 
     public static void main(String[] args) {
@@ -17,7 +19,7 @@ public class RoundedButtons {
                 85.7 114.7 3.2 6.0 1.2 3 86.3 114.8 88.1 118.2 85.9 120.7
                 """;
         FastReader io = new FastReader(in);
-        int testCases = Integer.parseInt(io.nextLine());
+        int testCases = io.nextInt();
 
         double x, y, w, h, r;
         for (int i = 0; i < testCases; i++) {
@@ -46,7 +48,7 @@ public class RoundedButtons {
         double inWidth  = w - (2 * r);
         double inHeight = h - (2 * r);
 
-        // calculate all 4 center points
+        // calculate all 4 circle center points.
         Pair center2 = new Pair(x + r, y + r);
         Pair center3 = new Pair(x + r, y + r + inHeight);
         Pair center1 = new Pair(x + r + inWidth, y + r);
@@ -85,6 +87,15 @@ public class RoundedButtons {
         }
         return result;
     }
+
+    static void populateArray(Pair center, Pair click, double radius, List<String> result) {
+        double distance = center.calcDistance(click);
+        if (isInside(distance, radius)) {
+            result.add("inside");
+        } else {
+            result.add("outside");
+        }
+    }
 }
 
 class Pair {
@@ -96,9 +107,10 @@ class Pair {
         this.y = y;
     }
 
-    static double calcDistance(Pair center, Pair click) {
-        double xDistance = (center.x - click.x);
-        double yDistance = (center.y - click.y);
+    // calculates the distance between two points
+    public double calcDistance(Pair click) {
+        double yDistance = (y - click.y);
+        double xDistance = (x - click.x);
         double x = Math.pow(xDistance, 2);
         double y = Math.pow(yDistance, 2);
 
@@ -109,12 +121,4 @@ class Pair {
         return distance <= radius;
     }
 
-    static void populateArray(Pair center, Pair click, double radius, List<String> result) {
-        double distance = calcDistance(center, click);
-        if (isInside(distance, radius)) {
-            result.add("inside");
-        } else {
-            result.add("outside");
-        }
-    }
 }

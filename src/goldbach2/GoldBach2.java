@@ -7,6 +7,8 @@ import java.util.List;
 
 import static lib.math.MyMath.isPrime;
 
+// https://open.kattis.com/problems/goldbach2
+
 public class GoldBach2 {
 
     public static void main(String[] args) {

@@ -4,6 +4,8 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// https://open.kattis.com/problems/simplicity
+
 public class Simplicity {
 
     public static void main(String[] args) {
@@ -24,11 +26,8 @@ public class Simplicity {
             }
         } else {
             // length >= 4
-            if (noDuplicates(str)) {
-                return str.length() - 2;
-            } else if (isRepeating(str)) {
-                return 0;
-            }
+            if (noDuplicates(str)) return str.length() - 2;
+            if (isRepeating(str)) return 0;
 
             // from here onwards:  non-repeating, 4+ chars  (e.g, aabb, aaab)
             // calc unique chars.  letter: l(1), e(2), t(2), r(1)     delete until list.size() == 2

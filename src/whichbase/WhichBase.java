@@ -17,8 +17,7 @@ public class WhichBase {
                 """;
 
         FastReader io = new FastReader(in);
-
-        int cases = Integer.parseInt(io.nextLine());
+        int cases = io.nextInt();
 
         for (int i = 1; i <= cases; i++) {
             io.nextInt();

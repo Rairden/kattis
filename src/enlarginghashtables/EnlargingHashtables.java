@@ -4,6 +4,8 @@ import lib.io.FastReader;
 
 import static lib.math.MyMath.isPrime;
 
+//https://open.kattis.com/problems/enlarginghashtables
+
 public class EnlargingHashtables {
 
     public static void main(String[] args) {

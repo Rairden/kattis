@@ -4,15 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+// https://open.kattis.com/problems/semafori
+
 public class Semafori {
 
     public static void main(String[] args) {
-        String input1 = """
+        String in1 = """
                 2 10
                 3 5 5
                 5 2 2
                 """;
-        String input2 = """
+        String in2 = """
                 4 30
                 7 13 5
                 14 4 4
@@ -20,7 +22,7 @@ public class Semafori {
                 25 1 1
                 """;
 
-        Scanner scan = new Scanner(input2);
+        Scanner scan = new Scanner(in2);
         int numLights = scan.nextInt();
         int roadLength = scan.nextInt();
         int time = 0;

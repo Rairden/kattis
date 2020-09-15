@@ -4,16 +4,18 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// https://open.kattis.com/problems/parsinghex
+
 public class ParsingHex {
 
     public static void main(String[] args) {
 
-        String input = """
+        String in = """
                 uyzrr0x5206aBCtrrwm0Xa8aD4poqwqr
                 pqovx0x6d3e6-+ 230xB6fcgmmm
                 0xffffffff
                 """;
-        var scan = new Scanner(input);
+        var scan = new Scanner(in);
 
         // https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/Integer.html#parseInt(java.lang.String,int)
         // To convert bases, use Integer.parseInt(). You cannot use a16 with the prefix '0x'

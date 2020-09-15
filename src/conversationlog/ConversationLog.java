@@ -1,14 +1,21 @@
 package conversationlog;
 
 import lib.io.FastReader;
+
+import java.io.FileNotFoundException;
 import java.util.*;
 import static conversationlog.ConversationLog.skipWords;
 
+// https://open.kattis.com/problems/conversationlog
+
 public class ConversationLog {
 
-    public static void main(String[] args) {
+    static Set<String> skipWords = new HashSet<>();
 
-        FastReader io = new FastReader();
+    public static void main(String[] args) throws FileNotFoundException {
+
+        StringBuilder file = new StringBuilder("src/conversationlog/in2");
+        FastReader io = new FastReader(file);
         int numCases = io.nextInt();
 
         var map = new HashMap<String, User>();
@@ -34,9 +41,8 @@ public class ConversationLog {
         var keySet   = new HashSet<String>();
         for (User user : map.values()) {
             for (String uniqueWord : user.uniqueWords) {
-                if (keySet.contains(uniqueWord) || skipWords.contains(uniqueWord)) {
-                    continue;
-                }
+                if (keySet.contains(uniqueWord) || skipWords.contains(uniqueWord)) continue;
+
                 int numberOfMatches = user.allSetsContainWord(map, uniqueWord);
                 if (numberOfMatches > 0) {
                     Match m = new Match(uniqueWord, numberOfMatches);
@@ -54,8 +60,6 @@ public class ConversationLog {
             System.out.println(match.word);
         }
     }
-
-    static Set<String> skipWords = new HashSet<>();
 }
 
 class User {
@@ -76,6 +80,7 @@ class User {
                 return 0;
             }
         }
+
         int cnt = 0;
         for (User user : values) {
             for (String word : user.words) {

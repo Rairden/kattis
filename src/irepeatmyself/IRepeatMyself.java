@@ -4,11 +4,13 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// https://open.kattis.com/problems/irepeatmyself
+
 public class IRepeatMyself {
 
     public static void main(String[] args) {
 
-        String input = """
+        String in = """
                 7
                 I Repeat Myself I Repeat Myself I Repeat
                 aaaaaaaaaaaaaaaaaaaaa
@@ -19,7 +21,7 @@ public class IRepeatMyself {
                 baba
                 """;
 
-        Scanner scan = new Scanner(input);
+        Scanner scan = new Scanner(in);
         int testCases = scan.nextInt();
         scan.nextLine();
 

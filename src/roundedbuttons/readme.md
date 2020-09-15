@@ -5,6 +5,8 @@ As illustrated below, a rounded rectangle replaces the sharp corners of an ordin
 ![](../../docs/roundedButtons1.png)
 ![](../../docs/roundedButtons2.png)
 
+Link to the [desmos](https://gitlab.com/Rairden/kattis/-/tree/master/src/roundedbuttons) graph above.
+
 Using a coordinate system with the X axis pointing to the right and the Y axis pointing down, a rounded rectangle is described by giving the `x,y` locations of the left and top edges. 
 The width, `w`, describes the distance between the left and right edges, and the height, `h`, describes the distance between the top and the bottom edges. 
 The radius used for the quarter-circle rounded corners is given by the `r` parameter.

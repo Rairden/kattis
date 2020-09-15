@@ -5,6 +5,8 @@ import lib.io.Kattio;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+// https://open.kattis.com/problems/repeatingdecimal
+
 public class RepeatingDecimal {
 
     public static void main(String[] args) {

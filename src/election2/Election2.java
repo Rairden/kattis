@@ -2,32 +2,18 @@ package election2;
 
 import lib.io.FastReader;
 
+import java.io.FileNotFoundException;
 import java.util.*;
 
 // https://open.kattis.com/problems/election2
 
 public class Election2 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
-        String in = """
-                3
-                Marilyn Manson
-                Rhinoceros
-                Jane Doe
-                Family Coalition
-                John Smith
-                independent
-                6
-                John Smith
-                Marilyn Manson
-                Marilyn Manson
-                Jane Doe
-                John Smith
-                Marilyn Manson
-                """;
+        StringBuilder file = new StringBuilder("src/election2/in");
+        FastReader io = new FastReader(file);
 
-        FastReader io = new FastReader(in);
         int numberOfCandidates = io.nextInt();
 
         Map<String, Ballot> candidates = new HashMap<>();

@@ -2,6 +2,7 @@ package variablearithmetic;
 
 import lib.io.FastReader;
 
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,16 +10,15 @@ import java.util.Map;
 
 public class VariableArithmetic {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
-        FastReader io = new FastReader(System.in);
+        StringBuilder file = new StringBuilder("src/variablearithmetic/in");
+        FastReader io = new FastReader(file);
         Map<String, Integer> vars = new HashMap<>();
 
         while (true) {
             String line = io.nextLine();
-            if (line.equals("0")) {
-                break;
-            }
+            if (line.equals("0")) break;
 
             String[] tok = line.split("\\s");
             String output = processLine(tok, vars);

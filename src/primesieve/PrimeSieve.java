@@ -4,11 +4,23 @@ import lib.io.FastReader;
 import java.util.Arrays;
 import static java.lang.Boolean.TRUE;
 
+// https://open.kattis.com/problems/primesieve
+
 public class PrimeSieve {
 
     public static void main(String[] args) {
 
-        FastReader io = new FastReader(System.in);
+        String in = """
+                9973 6
+                1
+                2
+                3
+                4
+                9972
+                9973
+                """;
+
+        FastReader io = new FastReader(in);
         int n = io.nextInt();
         int q = io.nextInt();
 

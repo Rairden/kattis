@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+// https://open.kattis.com/problems/weakvertices
+
 public class WeakVertices {
 
     public static void main(String[] args) {
 
-        String input = """
+        String in = """
                 9
                 0 1 1 1 0 0 0 0 0
                 1 0 0 0 0 0 1 0 0
@@ -24,7 +26,7 @@ public class WeakVertices {
                 -1
                 """;
 
-        Scanner scan = new Scanner(input);
+        Scanner scan = new Scanner(in);
         TempList vertex = TempList.getInstance();
 
         while (scan.hasNextLine()) {
@@ -73,7 +75,6 @@ public class WeakVertices {
     }
 
     public static boolean isWeakVertex(int[][] arr) {
-        boolean weak = true;
         for (Integer x : TempList.vertex.neighbors) {
             if (arr[x][x] == 1) {
                 return false;
@@ -84,7 +85,7 @@ public class WeakVertices {
                 }
             }
         }
-        return weak;
+        return true;
     }
 
     public static StringBuilder printWeakVertices() {

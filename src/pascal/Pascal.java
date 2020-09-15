@@ -2,6 +2,8 @@ package pascal;
 
 import java.util.Scanner;
 
+// https://open.kattis.com/problems/pascal
+
 public class Pascal {
 
     public static void main(String[] args) {

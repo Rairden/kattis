@@ -12,7 +12,8 @@ public class EnlargingHashtables {
         String in = """
                 29
                 33
-                0""";
+                0
+                """;
         FastReader io = new FastReader(in);
 
         while (true) {

@@ -4,8 +4,8 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 public class FastReader {
-    public BufferedReader br;
-    public StringTokenizer st;
+    private BufferedReader br;
+    private StringTokenizer st;
 
     public FastReader() {
         br = new BufferedReader(new InputStreamReader(System.in));

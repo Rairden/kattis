@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+// https://open.kattis.com/problems/crackingrsa
+
 public class CrackingRSA {
 
     public static void main(String[] args) {
@@ -25,7 +27,8 @@ public class CrackingRSA {
             q = pf.get(1);
 
             long r = (p - 1) * (q - 1);
-            findCandidate(e, r);
+            long privateKey = findCandidate(e, r);
+            System.out.println(privateKey);
         }
     }
 
@@ -41,7 +44,6 @@ public class CrackingRSA {
             long candidateK = calcCandidate(r, index_k);
             if (candidateK % e == 0) {
                 long d = candidateK / e;
-                System.out.println(d);
                 return d;
             }
         }

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+// https://open.kattis.com/problems/keytocrypto
+
 public class KeyToCrypto {
 
     public static void main(String[] args) {
@@ -19,7 +21,7 @@ public class KeyToCrypto {
      * @param ciphertext the encrypted word (e.g, SGZVQBUQAFRWSLC)
      * @param secretWord (e.g., ACMSENDMOREMONK is the key, and ACM is the secret word)
      */
-    private static void decryptMessage(String ciphertext, String secretWord) {
+    static void decryptMessage(String ciphertext, String secretWord) {
 
         final int CONVERTBASE26 = 65;               // magic offset number. A = 0 and 65 in ASCII
         char[] cipher = ciphertext.toCharArray();   // SGZVQBUQAFRWSLC
@@ -40,10 +42,10 @@ public class KeyToCrypto {
                 int result = ciph - key.get(i) + CONVERTBASE26;
                 key.add((char) result);
             } else {
-                int begin = ciph - CONVERTBASE26;
-                int end = key.get(i) - CONVERTBASE26;
+                int begin   = ciph - CONVERTBASE26;
+                int end     = key.get(i) - CONVERTBASE26;
                 int counter = previous(25, begin, end);
-                int result = counter + CONVERTBASE26;
+                int result  = counter + CONVERTBASE26;
                 key.add((char) result);
             }
             i++;
@@ -61,7 +63,7 @@ public class KeyToCrypto {
         }
     }
 
-    public static int previous(int upperLimit, int begin, int end) {
+    static int previous(int upperLimit, int begin, int end) {
         int value = begin;
         for (int k = 0; k < end; k++) {
             if (value == 0) {

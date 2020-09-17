@@ -2,22 +2,22 @@ package almostperfect;
 
 import lib.io.FastReader;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class AlmostPerfect {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         String in = """
                 6
                 65
                 650
                 """;
         FastReader io = new FastReader(in);
+
         String line;
-        while ((line = io.br.readLine()) != null) {
+        while ((line = io.nextLine()) != null) {
             int p = Integer.parseInt(line);
             System.out.println(p + " " + calcPerfectNumber(p));
         }
@@ -43,7 +43,7 @@ public class AlmostPerfect {
         if (sum == p) {
             return "perfect";
         }
-        return sum >= p - 2 && sum <= p + 2 ? "almost perfect" : "not perfect";
+        return (sum >= p - 2 && sum <= p + 2) ? "almost perfect" : "not perfect";
     }
 
     static String calcPerfectNumber2(int p) {

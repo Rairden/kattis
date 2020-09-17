@@ -80,7 +80,6 @@ class GuessTheDataStructure {
 
     // 1 2 1 1 2 1 2 2
     static boolean stackTest(int[] cmds) {
-
         for (int i = 0; i < cmds.length; i += 2) {
             if (cmds[i] == PUSH.id) {
                 stack.push(cmds[i + 1]);
@@ -102,7 +101,6 @@ class GuessTheDataStructure {
 
     // 1 1 1 2 1 3 2 1 2 2 2 3
     static boolean queueTest(int[] cmds) {
-
         for (int i = 0; i < cmds.length; i += 2) {
             if (cmds[i] == PUSH.id) {
                 queue.add(cmds[i + 1]);
@@ -124,7 +122,6 @@ class GuessTheDataStructure {
 
     // 1 2 1 5 1 1 1 3 2 5 1 4 2 4
     static boolean priorityQueueTest(int[] cmds) {
-
         for (int i = 0; i < cmds.length; i += 2) {
             if (cmds[i] == PUSH.id) {
                 pq.add(cmds[i + 1]);

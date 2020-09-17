@@ -16,7 +16,8 @@ public class GoldBach2 {
                 3
                 4
                 26
-                100""";
+                100
+                """;
         FastReader io = new FastReader(in);
         int testCases = io.nextInt();
 

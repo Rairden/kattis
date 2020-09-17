@@ -2,6 +2,8 @@ package cups;
 
 import java.util.*;
 
+// https://open.kattis.com/problems/cups
+
 public class Cup implements Comparable<Cup> {
 
     public static void main(String[] args) {

@@ -2,6 +2,8 @@ package backspace;
 
 import lib.io.FastReader;
 
+import java.io.FileNotFoundException;
+
 // https://open.kattis.com/problems/backspace
 
 public class Backspace {
@@ -26,13 +28,11 @@ public class Backspace {
             if (sb.charAt(i) == BACKSPACE) {
                 int backspaces = countRepeatedBackspaces(sb, i);
 
-                if (backspaces >= 2 && i == 0) {
+                if (backspaces >= 1 && i == 0) {
                     i = backspaces - 1;
                 } else {
-                    String result = deleteChar(sb, i, backspaces);
-                    if (result.equals("end of string")) break;
-
-                    i += backspaces - 1;
+                    deleteChar(sb, i, backspaces);
+                    i += backspaces;
                 }
             }
         }
@@ -59,29 +59,24 @@ public class Backspace {
     }
 
     /**
-     * Instead of shuffling, I replaced the deleted character w/ a magic symbol DELETED_CHAR.
+     * Instead of shuffling, I replace the deleted character w/ a magic symbol DELETED_CHAR.
      * @param sb the input string
      * @param i the current index
      * @param backspaces how many characters to delete
-     * @return "end of string" if you've reached the end of the string
      */
-    static String deleteChar(StringBuilder sb, int i, int backspaces) {
+    static void deleteChar(StringBuilder sb, int i, int backspaces) {
         int deleted = 0;
         int offset  = 1;
 
         while (backspaces > deleted) {
-            try {
-                if (sb.charAt(i - offset) != DELETED_CHAR && sb.charAt(i - offset) != BACKSPACE) {
-                    sb.setCharAt(i - offset, DELETED_CHAR);
-                    deleted++;
-                    if (i + offset >= sb.length()) return "end of string";
-                }
-                offset++;
-            } catch (Exception e) {
-                return "";
+            if (sb.charAt(i - offset) != DELETED_CHAR && sb.charAt(i - offset) != BACKSPACE) {
+                sb.setCharAt(i - offset, DELETED_CHAR);
+                deleted++;
             }
+            offset++;
+
+            if (i - offset < 0) return;
         }
-        return "";
     }
 
     /**

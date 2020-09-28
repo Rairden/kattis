@@ -1,10 +1,10 @@
 package haypoints;
 
-import java.io.File;
+import lib.io.FastReader;
+
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,21 +14,21 @@ public class HayPoints {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        File file = new File("src/haypoints/in");
-        Scanner scan = new Scanner(file);
+        StringBuilder file = new StringBuilder("src/haypoints/in");
+        FastReader io = new FastReader(file);
 
-        int dictionarySize = scan.nextInt();
-        int jobDescriptions = scan.nextInt();
+        int dictionarySize = io.nextInt();
+        int jobDescriptions = io.nextInt();
         Map<String, Integer> job = new HashMap<>();
         int total = 0;
 
         for (int i = 0; i < dictionarySize; i++) {
-            job.put(scan.next(), scan.nextInt());
+            job.put(io.next(), io.nextInt());
         }
 
         for (int i = 0; i < jobDescriptions; i++) {
-            while (scan.hasNext()) {
-                String word = scan.next();
+            while (true) {
+                String word = io.next();
                 if (word.equals(".")) {
                     System.out.println(total);
                     total = 0;
@@ -41,13 +41,12 @@ public class HayPoints {
         }
     }
 
-    static int calculateSalary(Tokenizer token, Map<String, Integer> map) {
-        String string = token.stringBuilder.toString();
+    static int calculateSalary(StringBuilder word, Map<String, Integer> map) {
         int totalSalary = 0;
 
         for (String str : map.keySet()) {
             Pattern p = Pattern.compile(str);
-            Matcher m = p.matcher(string);
+            Matcher m = p.matcher(word);
 
             int cnt = 0;
             while (m.find()) {

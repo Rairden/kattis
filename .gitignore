@@ -109,6 +109,7 @@ META-INF/
 
 # Kattis long input files
 Kattis-longInput/
+enwik9-10e6
 
 # Package Files #
 *.jar

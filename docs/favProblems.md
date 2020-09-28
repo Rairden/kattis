@@ -5,9 +5,11 @@ https://gitlab.com/Rairden/kattis/-/tree/master/src
 
 | My src code                                                                                                                   | Difficulty | Problem                                                         |
 |-------------------------------------------------------------------------------------------------------------------------------|-----------:|-----------------------------------------------------------------|
+| [phonelist](https://gitlab.com/Rairden/kattis/-/blob/master/src/phonelist/PhoneList.java)                                     |        4.4 | [phonelist](https://open.kattis.com/problems/phonelist) |
 | [almostPerfect](https://gitlab.com/Rairden/kattis/-/blob/master/src/almostperfect/AlmostPerfect.java)                         |        3.7 | [almostPerfect](https://open.kattis.com/problems/almostperfect) |
 | [roundedButtons](https://gitlab.com/Rairden/kattis/-/blob/master/src/roundedbuttons/RoundedButtons.java)                      |        3.0 | [roundedButtons](https://open.kattis.com/problems/roundedbuttons) |
 | [conversationLog](https://gitlab.com/Rairden/kattis/-/blob/master/src/conversationlog/ConversationLog.java)                   |        2.9 | [conversationLog](https://open.kattis.com/problems/conversationlog) |
+| [backspace](https://gitlab.com/Rairden/kattis/-/blob/master/src/backspace/Backspace.java)                                     |        2.9 | [backspace](https://open.kattis.com/problems/backspace) |
 | [guessTheDataStructure](https://gitlab.com/Rairden/kattis/-/blob/master/src/guessthedatastructure/GuessTheDataStructure.java) |        2.7 | [guessTheDataStructure](https://open.kattis.com/problems/guessthedatastructure) |
 | [simplicity](https://gitlab.com/Rairden/kattis/-/blob/master/src/simplicity/Simplicity.java)                                  |        2.6 | [simplicity](https://open.kattis.com/problems/simplicity) |
 | [crackingRSA](https://gitlab.com/Rairden/kattis/-/blob/master/src/crackingrsa/CrackingRSA.java)                               |        2.4 | [crackingRSA](https://open.kattis.com/problems/crackingrsa) |

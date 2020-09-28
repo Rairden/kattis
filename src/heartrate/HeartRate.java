@@ -2,13 +2,15 @@ package heartrate;
 
 import java.util.Scanner;
 
+// https://open.kattis.com/problems/heartrate
+
 public class HeartRate {
 
     public static void main(String[] args) {
         bpm();
     }
 
-    private static void bpm() {
+    static void bpm() {
         String in = """
                 2
                 6 5.0000

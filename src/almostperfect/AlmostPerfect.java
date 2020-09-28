@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// https://open.kattis.com/problems/almostperfect
+
 public class AlmostPerfect {
 
     public static void main(String[] args) {

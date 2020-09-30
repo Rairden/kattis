@@ -3,20 +3,21 @@
 List of all 34 problems I've completed:  
 https://gitlab.com/Rairden/kattis/-/tree/master/src
 
-| My src code                                                                                                                   | Difficulty | Problem                                                         |
-|-------------------------------------------------------------------------------------------------------------------------------|-----------:|-----------------------------------------------------------------|
-| [phonelist](https://gitlab.com/Rairden/kattis/-/blob/master/src/phonelist/PhoneList.java)                                     |        4.4 | [phonelist](https://open.kattis.com/problems/phonelist) |
-| [almostPerfect](https://gitlab.com/Rairden/kattis/-/blob/master/src/almostperfect/AlmostPerfect.java)                         |        3.7 | [almostPerfect](https://open.kattis.com/problems/almostperfect) |
-| [roundedButtons](https://gitlab.com/Rairden/kattis/-/blob/master/src/roundedbuttons/RoundedButtons.java)                      |        3.0 | [roundedButtons](https://open.kattis.com/problems/roundedbuttons) |
-| [conversationLog](https://gitlab.com/Rairden/kattis/-/blob/master/src/conversationlog/ConversationLog.java)                   |        2.9 | [conversationLog](https://open.kattis.com/problems/conversationlog) |
-| [backspace](https://gitlab.com/Rairden/kattis/-/blob/master/src/backspace/Backspace.java)                                     |        2.9 | [backspace](https://open.kattis.com/problems/backspace) |
+| My src code                                                                                                                   | Difficulty | Problem                                                                         |
+|-------------------------------------------------------------------------------------------------------------------------------|-----------:|---------------------------------------------------------------------------------|
+| [phonelist](https://gitlab.com/Rairden/kattis/-/blob/master/src/phonelist/PhoneList.java)                                     |        4.4 | [phonelist](https://open.kattis.com/problems/phonelist)                         |
+| [almostPerfect](https://gitlab.com/Rairden/kattis/-/blob/master/src/almostperfect/AlmostPerfect.java)                         |        3.7 | [almostPerfect](https://open.kattis.com/problems/almostperfect)                 |
+| [grid](https://gitlab.com/Rairden/kattis/-/blob/master/src/grid/Grid.java)                                                    |        3.0 | [grid](https://open.kattis.com/problems/grid)                                   |
+| [roundedButtons](https://gitlab.com/Rairden/kattis/-/blob/master/src/roundedbuttons/RoundedButtons.java)                      |        3.0 | [roundedButtons](https://open.kattis.com/problems/roundedbuttons)               |
+| [conversationLog](https://gitlab.com/Rairden/kattis/-/blob/master/src/conversationlog/ConversationLog.java)                   |        2.9 | [conversationLog](https://open.kattis.com/problems/conversationlog)             |
+| [backspace](https://gitlab.com/Rairden/kattis/-/blob/master/src/backspace/Backspace.java)                                     |        2.9 | [backspace](https://open.kattis.com/problems/backspace)                         |
 | [guessTheDataStructure](https://gitlab.com/Rairden/kattis/-/blob/master/src/guessthedatastructure/GuessTheDataStructure.java) |        2.7 | [guessTheDataStructure](https://open.kattis.com/problems/guessthedatastructure) |
-| [simplicity](https://gitlab.com/Rairden/kattis/-/blob/master/src/simplicity/Simplicity.java)                                  |        2.6 | [simplicity](https://open.kattis.com/problems/simplicity) |
-| [crackingRSA](https://gitlab.com/Rairden/kattis/-/blob/master/src/crackingrsa/CrackingRSA.java)                               |        2.4 | [crackingRSA](https://open.kattis.com/problems/crackingrsa) |
-| [iRepeatMyself](https://gitlab.com/Rairden/kattis/-/blob/master/src/irepeatmyself/IRepeatMyself.java)                         |        2.4 | [iRepeatMyself](https://open.kattis.com/problems/irepeatmyself) |
-| [veci](https://gitlab.com/Rairden/kattis/-/tree/master/src/veci)                                                              |        1.8 | [veci](https://open.kattis.com/problems/veci) |
-| [keyToCrypto](https://gitlab.com/Rairden/kattis/-/blob/master/src/keytocrypto/KeyToCrypto.java)                               |        1.7 | [keyToCrypto](https://open.kattis.com/problems/keytocrypto) |
-| [weakVertices](https://gitlab.com/Rairden/kattis/-/tree/master/src/weakvertices)                                              |        1.6 | [weakVertices](https://open.kattis.com/problems/weakvertices) |
+| [simplicity](https://gitlab.com/Rairden/kattis/-/blob/master/src/simplicity/Simplicity.java)                                  |        2.6 | [simplicity](https://open.kattis.com/problems/simplicity)                       |
+| [crackingRSA](https://gitlab.com/Rairden/kattis/-/blob/master/src/crackingrsa/CrackingRSA.java)                               |        2.4 | [crackingRSA](https://open.kattis.com/problems/crackingrsa)                     |
+| [iRepeatMyself](https://gitlab.com/Rairden/kattis/-/blob/master/src/irepeatmyself/IRepeatMyself.java)                         |        2.4 | [iRepeatMyself](https://open.kattis.com/problems/irepeatmyself)                 |
+| [veci](https://gitlab.com/Rairden/kattis/-/tree/master/src/veci)                                                              |        1.8 | [veci](https://open.kattis.com/problems/veci)                                   |
+| [keyToCrypto](https://gitlab.com/Rairden/kattis/-/blob/master/src/keytocrypto/KeyToCrypto.java)                               |        1.7 | [keyToCrypto](https://open.kattis.com/problems/keytocrypto)                     |
+| [weakVertices](https://gitlab.com/Rairden/kattis/-/tree/master/src/weakvertices)                                              |        1.6 | [weakVertices](https://open.kattis.com/problems/weakvertices)                   |
 
 
 I started doing these in May 2019. I imagine I completed the majority (20/34) of them in 2 months.  

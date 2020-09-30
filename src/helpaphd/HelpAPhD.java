@@ -4,6 +4,8 @@ import lib.io.FastReader;
 
 import java.io.FileNotFoundException;
 
+// https://open.kattis.com/problems/helpaphd
+
 public class HelpAPhD {
 
     public static void main(String[] args) throws FileNotFoundException {

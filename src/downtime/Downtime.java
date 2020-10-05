@@ -2,12 +2,15 @@ package downtime;
 
 import lib.io.FastReader;
 
+import java.io.FileNotFoundException;
+
 // https://open.kattis.com/problems/downtime
 
 public class Downtime {
 
-    public static void main(String[] args) {
-        FastReader io = new FastReader();
+    public static void main(String[] args) throws FileNotFoundException {
+        StringBuilder file = new StringBuilder("src/downtime/in");
+        FastReader io = new FastReader(file);
         int request = io.nextInt();
         int rps = io.nextInt();
         int[] requests = new int[request];

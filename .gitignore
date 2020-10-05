@@ -108,8 +108,8 @@ META-INF/
 *.plantuml
 
 # Kattis long input files
-Kattis-longInput/
 enwik9-10e6
+inLong*
 
 # Package Files #
 *.jar

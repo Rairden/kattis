@@ -1,6 +1,6 @@
 ## A list of my favorite problems I've done on Kattis (using Java)
 
-List of all 34 problems I've completed:  
+List of all 43 problems I've completed:  
 https://gitlab.com/Rairden/kattis/-/tree/master/src
 
 | My src code                                                                                                                   | Difficulty | Problem                                                                         |
@@ -26,7 +26,7 @@ I started doing these in May 2019. I imagine I completed the majority (20/34) of
 * I almost never had to google how to do something
 * Each problem would take me roughly 2 - 4 hrs to solve
 
-The one I'm most proud of is `guessthedatastructure`.  
+The two I'm most proud of is grid and phonelist.  
 I really enjoyed solving the encryption ones too (crackingrsa, keytocrypto). They were really hard!  
 
 When I first started, my problem-solving peaked out around 1.8 difficulty. Now I can get to 3.0 is my new ceiling. Anything higher requires a math book or graphs (which I have no experience).  

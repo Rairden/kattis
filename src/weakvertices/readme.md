@@ -1,5 +1,7 @@
 # Weak Vertices
 
+<https://open.kattis.com/problems/weakvertices>
+
 Engineers like to use triangles. It probably has something to do with how a triangle can provide a lot of structural strength. 
 We can describe the physical structure of some designs using an undirected graph. We’ll say vertex `i` is part of a triangle if `i` 
 has two different neighbors `j` and `k` such that `j` and `k` are neighbors of each other. For this problem, find weak vertices 
@@ -21,8 +23,7 @@ The end of input is marked by a value of −1 for n.
 
 ## Output
 
-For each graph, produce a line listing the weak vertices
-ordered from least to greatest.
+For each graph, produce a line listing the weak vertices ordered from least to greatest.
 
 `Sample Input/Output`
 

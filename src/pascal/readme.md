@@ -1,9 +1,9 @@
 # Pascal
-https://open.kattis.com/problems/pascal
 
-Little Frane is already in tenth grade, but is still struggling with Pascal in computer class. 
-For homework, his teacher wrote the following program into his notebook, and he needs to determine the output, 
-given the integer N.  
+<https://open.kattis.com/problems/pascal>
+
+Little Frane is already in tenth grade, but is still struggling with Pascal in computer class.  
+For homework, his teacher wrote the following program into his notebook, and he needs to determine the output, given the integer N.  
 
 <pre>
 readln(N);

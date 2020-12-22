@@ -1,10 +1,12 @@
-# Phone List
-## https://open.kattis.com/problems/phonelist
+# phonelist
 
-### I could not get java code to pass the 3 second time limit.  
-A naive algo I wrote is very slow, which has a time complexity of &Omicron;(n&sup2;). And within it calls `String.indexOf()`.  
-The summation for the naive algo listed below is ![](../../docs/summation-phoneList.png).
+<https://open.kattis.com/problems/phonelist>
 
+## I could not get java to pass the 3 second time limit.
+
+A naive algo I wrote is very slow. And within it calls `String.indexOf()`.  
+The summation for the naive algo listed below is: $`\displaystyle \sum_{k=1}^{n-1} (n-k) = \frac{n(n-1)}{2}`$ $`\hspace{0.15cm}`$ which is $`O(n^2)`$.  
+A lot of algorithms produce that exact same summation formula (bubble and selection sort).
 
 ## Before - time limit exceeded
 
@@ -39,10 +41,10 @@ Here is the benchmark of the different techniques.
 | BoyerMoore (github)       |       10,981 |
 | BoyerMoore (dartmouth)    |       13,972 |
 
-On all of those except the first one I used a nested O(n&sup2;) loop.
+All except the first one I used a nested $`O(n^2)`$ loop.
 
 The runtime when using a Trie is incredible, since there's no nested loop.  
-Using a nested loop means the code block executes (n&sup2; - n)/2. Which is (10,000&sup2; x 9,999&sup2;)/2 = 49,995,000. Then it hits `String.indexOf()` or `KMP`.
+Using a nested loop means the code block executes $`\frac {n^2-n}{2}`$ times. Which is $`\frac {10,000^2 - 10,000}{2} = 49,995,000`$. Then it hits `String.indexOf()` or `KMP`.
 
 A trie only needs to iterate over `n`, which is 10,000 phone numbers. And for each phone number, it traverses the trie, which has a max depth of 10.
 
@@ -51,16 +53,20 @@ Princeton has some nice libraries. Here is the [TrieST class](https://algs4.cs.p
 I modified their `TrieST` class since I don't like the Queue dependency they use (87 lines). I use Java's collections to keep it simple (ArrayBlockingQueue). The runtime was the same.
 
 ```diff
+diff --git a/TrieST.java b/TrieST.java
+index 1fa49e7..97fe732 100644
+--- a/TrieST.java
++++ b/TrieST.java
+@@@@
 -        Queue<String> results = new Queue<String>();
 +        Queue<String> results = new ArrayBlockingQueue<>(10);
-
+@@@@
 -        if (x.val != null) results.enqueue(prefix.toString());
 +        if (x.val != null) results.add(prefix.toString());
-
+@@@@
 -        Queue<String> results = new Queue<String>();
 +        Queue<String> results = new ArrayBlockingQueue<>(10);
-
+@@@@
 -            results.enqueue(prefix.toString());
-+            results.add(prefix.toString());
++            if (x.val != null) results.add(prefix.toString());
 ```
-

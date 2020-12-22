@@ -1,3 +1,7 @@
+# Enlarging Hash Tables
+
+<https://open.kattis.com/problems/enlarginghashtables>
+
 When implementing an open addressing hash table, we can use many different types of collision resolution strategies. One such strategy is quadratic probing.  
 If we use quadratic probing, it’s very important that the size of the hash table is a prime number.  
 If it is a prime number and the table is less than half full, then we can prove that the quadratic probing algorithm will always be able to find an empty slot.  
@@ -10,7 +14,6 @@ Input is a sequence of up to 1000 table sizes, one per line. Each is given as an
 
 ## Output
 Output the smallest prime number larger than 2n. Also, if `n` happens not to be prime, add the parenthetical note ‘(_n_ is not prime)’.
-
 
 `Sample Input 1 / Sample Output 1`
 <pre>

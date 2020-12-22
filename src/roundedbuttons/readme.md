@@ -1,3 +1,7 @@
+# Rounded Buttons
+
+<https://open.kattis.com/problems/roundedbuttons>
+
 Most styles of graphical user interface make use of lots of rectangles. Buttons are rectangular, menus are rectangular and windows are rectangular. 
 Some styles of user interface exhibit a softer appearance by using rounded rectangles for some components. 
 As illustrated below, a rounded rectangle replaces the sharp corners of an ordinary rectangle with a smooth quarter circles.
@@ -5,13 +9,14 @@ As illustrated below, a rounded rectangle replaces the sharp corners of an ordin
 ![](../../docs/roundedButtons1.png)
 ![](../../docs/roundedButtons2.png)
 
-Link to the [desmos](https://gitlab.com/Rairden/kattis/-/tree/master/src/roundedbuttons) graph above.
+Link to the [desmos](https://www.desmos.com/calculator/bpnl1zk4fc) graph above.
 
 Using a coordinate system with the X axis pointing to the right and the Y axis pointing down, a rounded rectangle is described by giving the `x,y` locations of the left and top edges. 
 The width, `w`, describes the distance between the left and right edges, and the height, `h`, describes the distance between the top and the bottom edges. 
 The radius used for the quarter-circle rounded corners is given by the `r` parameter.
 
 ## Input
+
 Input begins with a line containing an integer 1 ≤ n ≤ 100. The next n lines each contain one test case. 
 A test case has a rounded rectangle description and mouse click locations. 
 The rectangle is given by 5 real numbers for the parameters `x y w h` and `r`. These parameters always describe a legal rounded rectangle. 
@@ -20,6 +25,7 @@ After the rectangle description is an integer 0 ≤ m ≤ 1000. Following this o
 All mouse clicks are in the range 0 ≤ `x,y` ≤ 2000. All real numbers given as input have at most 3 digits after the decimal point.
 
 ## Output
+
 For each mouse click location, output inside if the location is inside the rounded rectangle, or outside otherwise. A mouse click right on the edge of a rounded rectangle should be classified as inside.
 
 `Sample Input/Output`

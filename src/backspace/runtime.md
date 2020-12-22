@@ -1,7 +1,8 @@
 # Backspace
-## https://open.kattis.com/problems/backspace
 
-### I could not get java code to pass the 1 second time limit.
+<https://open.kattis.com/problems/backspace>
+
+I could not get java code to pass the 1 second time limit.
 
 I originally solved this problem in Feb 2020. I couldn't beat the time limit.  Fast-foward 7 months and I beat it.
 
@@ -17,7 +18,7 @@ When I finally beat this problem, I compared the runtimes of old vs new code. He
 
 ## Conslusion
 
-Don't use java.lang.StringBuilder.`ensureCapacity​(int minimumCapacity)` if you're expecting a string that could be 10<sup>6</sup> long. If it needs to resize, then it doubles its size when needed.
+Don't use java.lang.StringBuilder.`ensureCapacity(int minimumCapacity)` if you're expecting a string that could be 10<sup>6</sup> long. If it needs to resize, then it doubles its size when needed.
 
-And for this problem it seems super slow to use java.lang.StringBuilder.`deleteCharAt​(int index)`. Because when you delete a character, it needs to shuffle every single character to the left one place.
+And for this problem it seems super slow to use java.lang.StringBuilder.`deleteCharAt(int index)`. Because when you delete a character, it needs to shuffle every single character to the left one place.
 

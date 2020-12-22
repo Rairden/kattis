@@ -35,12 +35,13 @@ Then for each query x, output 1 if x is a `prime` and output 0 if x is `composit
 
 ***
 
-I've cannot beat this problem. I think you have to use some wheel technique.
+I cannot beat this problem. I think you have to use some wheel technique.
 
-I've tried with Java and Go. The two techniques below are too slow:
+I've tried with Java and Go. The two techniques below are too slow in Go:
 
 * [sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Algorithm_and_variants)
 * segmented sieve of Eratosthenes
 
-Supposedly both of these techniques take $`O(n\log(\log(n))`$ time, but Go fails on my maximum input test file with 0.31 sec on my machine.
+Supposedly both of these techniques take $`O(n\log(\log(n)))`$ time, but Go fails my maximum input test file with 0.31 sec on my machine.
 
+For the primality tests, I use the Go builtin math/big.`ProbablyPrime` which has a time complexity of $`O(k \log(n)^3)`$.

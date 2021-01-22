@@ -91,6 +91,11 @@ class User {
         }
         return cnt;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
 
 class Match implements Comparable<Match> {

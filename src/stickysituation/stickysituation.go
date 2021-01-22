@@ -1,58 +1,50 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
+	"io/ioutil"
 	"os"
-	"path/filepath"
+	"sort"
 	"strconv"
 	"strings"
 )
 
 // https://open.kattis.com/problems/stickysituation
 
+var sticks []int
+
 func main() {
-	input := os.Getenv("GOPATH") + filepath.Join("/src/code/stickysituation/in")
-	file, _ := os.Open(input)
-	io := bufio.NewScanner(file)
-	io.Scan()
-	io.Scan()
+	io, _ := ioutil.ReadAll(os.Stdin)
+	line := strings.Fields(string(io))
+	line = line[1:]
 
-	line := strings.Fields(io.Text())
-	combos := GetCombos(line, 3)
+	sticks = make([]int, len(line))
+	for i, s := range line {
+		sticks[i], _ = strconv.Atoi(s)
+	}
 
-	for i := 0; i < len(combos); i++ {
-		triangle := strings.Fields(combos[i])
-		if isTriangle(triangle) {
+	sort.Slice(sticks, func(i, j int) bool {
+		return sticks[i] < sticks[j]
+	})
+
+	// eliminate small sticks (impossible triangle). Only possible if sorted.
+	start := 0
+	for i := 0; i < len(sticks) - 2; i++ {
+		if sticks[i] + sticks[i+1] <= sticks[i+2] {
+			start++
+		} else {
+			break
+		}
+	}
+
+	sticks = sticks[start:]
+	if len(sticks) >= 3 {
+		if sticks[0] + sticks[1] > sticks[2] {
 			fmt.Println("possible")
-			os.Exit(0)
+		} else {
+			fmt.Println("impossible")
 		}
-	}
-	fmt.Println("impossible")
-}
-
-func isTriangle(tri []string) bool {
-	a, _ := strconv.Atoi(tri[0])
-	b, _ := strconv.Atoi(tri[1])
-	c, _ := strconv.Atoi(tri[2])
-
-	if a+b > c && a+c > b && b+c > a {
-		return true
-	}
-	return false
-}
-
-func GetCombos(set []string, depth int) []string {
-	return GetCombosHelper(set, depth, 0, "", []string{})
-}
-
-func GetCombosHelper(set []string, depth int, start int, prefix string, accum []string) []string {
-	if depth == 0 {
-		return append(accum, prefix)
 	} else {
-		for i := start; i <= len(set) - depth; i++ {
-			accum = GetCombosHelper(set, depth - 1, i + 1, prefix + set[i] + " ", accum)
-		}
-		return accum
+		fmt.Println("impossible")
 	}
 }

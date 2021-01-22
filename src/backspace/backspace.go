@@ -14,7 +14,7 @@ const BACKSPACE = '<'
 const DELETED_CHAR = '8'
 
 func main() {
-	file := os.Getenv("GOPATH") + filepath.Join("/src/code/backspace/in")
+	file := os.Getenv("GOPATH") + filepath.Join("/src/code/backspace/stack/in")
 	io, _ := ioutil.ReadFile(file)
 	line := io[:len(io) - 1]	// remove newline at end
 

@@ -44,4 +44,4 @@ I've tried with Java and Go. The two techniques below are too slow in Go:
 
 Supposedly both of these techniques take $`O(n\log(\log(n)))`$ time, but Go fails my maximum input test file with 0.31 sec on my machine.
 
-For the primality tests, I use the Go builtin math/big.`ProbablyPrime` which has a time complexity of $`O(k \log(n)^3)`$.
+For the primality tests, I use the Go builtin math/big.`ProbablyPrime` which has a time complexity of $`O(k \log(n)^3)`$. ProbablyPrime uses the Miller-Rabin algorithm.

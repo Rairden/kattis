@@ -44,16 +44,19 @@ A list of my memorable or interesting problems can be found [here](https://gitla
 | problem               | runtime Java (sec) | runtime Go (sec) |
 | --------------------- | -----------------: | ---------------: |
 | helpaphd              | 0.15               | 0.02             |
-| bits                  | 0.37               | 0.02             |
+| almostperfect         | 0.16               | 0.02             |
 | parsinghex            | 0.25               | 0.02             |
+| variablearithmetic    | 0.33               | 0.02             |
+| bits                  | 0.37               | 0.02             |
 | guessthedatastructure | 0.56               | 0.06             |
+| stickysituation       | 0.19               | 0.08             |
 | haypoints             | 0.33               | 0.08             |
 | heartrate             | 0.35               | 0.08             |
 | goldbach2             | 0.53               | 0.08             |
-| stickysituation       | 0.19               | 0.08             |
 | backspace             | 0.23               | 0.10             |
 | roundedbuttons        | 0.79               | 0.10             |
 | enlarginghashtables   | 0.34               | 0.12             |
+| crackingrsa           | 0.28               | 0.16             |
 | conversationlog       | 0.75               | 0.35             |
 
 What I don't like about Java is reading input. The normal `Scanner` is 2x slower than using a `BufferedReader`. On almost all problems I drag around my custom `FastReader` class which is 70 lines. In Go, it's just one line and builtin (NewScanner or ReadAll).
